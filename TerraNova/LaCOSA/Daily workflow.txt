@@ -1,0 +1,14 @@
+3) Daily workflow (now automated)
+
+Open VS Code → open C:\TerraNova.
+
+Terminal opens → profile auto-runs Initialize-PythonEnv.
+
+It activates .venv, upgrades pip quietly, and ensures everything in requirements.txt is installed (quiet).
+
+You code.
+
+Manual tools you can run any time:
+
+Test-Requirements      # prints what's missing (if anything)
+Repair-Requirements    # force-fixes one-by-one; shows any that fail
