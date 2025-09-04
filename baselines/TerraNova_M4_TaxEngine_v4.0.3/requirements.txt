@@ -1,0 +1,1 @@
+# Pinned requirements live in the root project; this placeholder is included per packaging allow-list.

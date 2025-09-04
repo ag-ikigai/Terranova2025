@@ -1,0 +1,2 @@
+[INFO] Pre-flight log placeholder for v4.0.3 packaging test.
+This file should contain the console output from running pre_flight_check.bat on the developer machine.
