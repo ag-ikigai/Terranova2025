@@ -1,0 +1,72 @@
+{
+  "reports": [
+    {
+      "module": "M2",
+      "ok": true,
+      "details": [
+        "[OK] M2/PL: m2_pl_schedule.parquet",
+        "[OK] M2/WC: m2_working_capital_schedule.parquet"
+      ],
+      "pl": {
+        "file": "m2_pl_schedule.parquet",
+        "found": {
+          "MONTH_INDEX": "Month_Index",
+          "DA": "Depreciation_NAD_000",
+          "NPAT": "NPAT_NAD_000"
+        },
+        "missing": []
+      },
+      "wc": {
+        "file": "m2_working_capital_schedule.parquet",
+        "found": {
+          "MONTH_INDEX": "Month_Index",
+          "NWC_CF": "Cash_Flow_from_NWC_Change_NAD_000"
+        },
+        "missing": []
+      }
+    },
+    {
+      "module": "M3",
+      "ok": false,
+      "details": [
+        "[FAIL] M3: Expected unified financing schedule or both debt & equity schedules"
+      ]
+    },
+    {
+      "module": "M4",
+      "ok": false,
+      "details": [
+        "[FAIL] M4: Missing roles: ['TAX_PAYABLE'] (file=m4_tax_schedule.parquet)"
+      ],
+      "tax": {
+        "file": "m4_tax_schedule.parquet",
+        "found": {
+          "MONTH_INDEX": "Month_Index",
+          "TAX_PAYABLE": null,
+          "TAX_EXPENSE?": "Tax_Expense"
+        },
+        "missing": [
+          "TAX_PAYABLE"
+        ]
+      }
+    },
+    {
+      "module": "M5",
+      "ok": false,
+      "details": [
+        "[FAIL] M5: Missing either Closing Cash or Net Cash Flow (file=m5_cash_flow_statement_final.parquet)"
+      ],
+      "cf": {
+        "file": "m5_cash_flow_statement_final.parquet",
+        "found": {
+          "MONTH_INDEX": "Month_Index",
+          "CFO?": "CFO_NAD_000",
+          "CFI?": null,
+          "CFF?": null,
+          "CLOSING_CASH|ALT": false
+        },
+        "missing": []
+      }
+    }
+  ]
+}
