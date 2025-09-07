@@ -1,0 +1,69 @@
+{
+  "out_dir": "C:\\TerraNova\\outputs",
+  "M2": {
+    "PL": [
+      "m2_pl_schedule.parquet"
+    ],
+    "WC": [
+      "m2_working_capital_schedule.parquet"
+    ],
+    "PL_roles": {
+      "chosen": {
+        "DA": "Depreciation_NAD_000",
+        "NPAT": "NPAT_NAD_000",
+        "MONTH_INDEX": "Month_Index"
+      },
+      "missing": [],
+      "columns": [
+        "Month_Index",
+        "Total_Revenue_NAD_000",
+        "Variable_OPEX_NAD_000",
+        "Fixed_OPEX_NAD_000",
+        "Total_OPEX_NAD_000",
+        "Depreciation_NAD_000",
+        "EBITDA_NAD_000",
+        "EBIT_NAD_000",
+        "Interest_Expense_NAD_000",
+        "PBT_NAD_000",
+        "Tax_Expense_NAD_000",
+        "NPAT_NAD_000"
+      ]
+    },
+    "WC_roles": {
+      "chosen": {
+        "NWC_CF": "Cash_Flow_from_NWC_Change_NAD_000",
+        "MONTH_INDEX": "Month_Index"
+      },
+      "missing": [],
+      "columns": [
+        "Month_Index",
+        "AR_Balance_NAD_000",
+        "Inventory_Balance_NAD_000",
+        "AP_Balance_NAD_000",
+        "NWC_Balance_NAD_000",
+        "Cash_Flow_from_NWC_Change_NAD_000"
+      ]
+    }
+  },
+  "M3": {
+    "unified": [],
+    "debt": [],
+    "equity": [],
+    "revolver": [
+      "m3_revolver_schedule.parquet"
+    ],
+    "finance_index": [
+      "m3_finance_index.parquet"
+    ]
+  },
+  "M4": {
+    "tax": [
+      "m4_tax_schedule.parquet"
+    ]
+  },
+  "M5": {
+    "cashflow": [
+      "m5_cash_flow_statement_final.parquet"
+    ]
+  }
+}

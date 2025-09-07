@@ -1,0 +1,23 @@
+Coverage plan (simple list)
+
+Module 0 — Setup & Validation (done)
+
+Module 1 — Operational Engines (Revenue, OPEX, CAPEX, Depreciation) (done)
+
+Module 2 — Working Capital & P&L (done)
+
+Module 3 — Financing Engine & Waterfall (done; with refi gate + rev-share payable)
+
+Module 4 — Tax Engine (corporate income tax, loss carryforward, USD mirror) ← next
+
+Module 5 — Cash Flow Statements assembler (CFO/CFI/CFF, link to Module 3 & 1)
+
+Module 6 — Balance Sheet builder (link WC, debt balances, rev-share payable)
+
+Module 7 — Investor 500k Optimization (SAFE/convertible grid) + documents filling
+
+Module 7.5 - Wiring CAPEX & Equity
+
+Module 8 — Outputs & Dashboards (exports + charts)
+
+Module 9 — Wrap-Up & Validation (BS integrity, DSCR thresholds, FX consistency)
