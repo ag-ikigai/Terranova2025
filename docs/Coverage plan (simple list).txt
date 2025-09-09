@@ -1,0 +1,29 @@
+Coverage plan (simple list)
+
+Module 0 — Setup & Validation (done)
+
+Module 1 — Operational Engines (Revenue, OPEX, CAPEX, Depreciation) (done)
+
+Module 2 — Working Capital & P&L (done)
+
+Module 3 — Financing Engine & Waterfall (done; with refi gate + rev-share payable)
+
+Module 4 — Tax Engine (corporate income tax, loss carryforward, USD mirror) ← next
+
+Module enrichM4 - Enrich Tax Payable
+
+Module 5 — Cash Flow Statements assembler (CFO/CFI/CFF, link to Module 3 & 1)
+
+Module 6 — Balance Sheet builder (link WC, debt balances, rev-share payable)
+
+Module 7.R1 — Rank Offers Investor 500k Optimization (SAFE/convertible grid) 
+
+Module 7.Human choice freezer - Freeze option by ranking or choice
+
+Module 7.5A - Junior Financing Wiring
+
+Module 7.5B - Build complete financial statements with FX Path, incorporation of junior flows properly as per IFRS
+
+Module 8 — "complete verifications" + "dashboards financial indexes building" 
+
+Module 9 — Outputs & Dashboards (exports + charts) + documents filling
