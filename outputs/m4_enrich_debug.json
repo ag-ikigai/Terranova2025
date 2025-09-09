@@ -1,0 +1,47 @@
+{
+  "status": "missing_inputs",
+  "missing": [
+    "Tax_Paid*"
+  ],
+  "path": "outputs\\m4_tax_schedule.parquet",
+  "columns_schedule": [
+    "Month_Index",
+    "Taxable_Profit",
+    "Loss_CF_BOP",
+    "Loss_Used",
+    "Loss_CF_EOP",
+    "Tax_Expense",
+    "Notes"
+  ],
+  "columns_summary": [
+    "Case_Name",
+    "Currency",
+    "Tax_Expense_Total",
+    "Loss_CF_EOP_Total",
+    "Computation_Mode"
+  ],
+  "expense_synonyms": [
+    "Tax_Expense_NAD_000",
+    "Tax_Expense",
+    "Income_Tax_Expense_NAD_000",
+    "Income_Tax_Expense",
+    "Tax_Charge_NAD_000",
+    "Tax_Charge",
+    "TaxProvision_NAD_000",
+    "Tax_Provision_NAD_000",
+    "TaxProvision",
+    "Income_Tax_Provision_NAD_000"
+  ],
+  "paid_synonyms": [
+    "Tax_Paid_NAD_000",
+    "Tax_Paid",
+    "Taxes_Paid_NAD_000",
+    "Taxes_Paid",
+    "Tax_Payments_NAD_000",
+    "Tax_Payments",
+    "Tax_Paid_CF_NAD_000",
+    "Tax_Paid_CashFlow_NAD_000",
+    "Tax_Cash_Paid_NAD_000",
+    "Tax_Cash_Paid"
+  ]
+}

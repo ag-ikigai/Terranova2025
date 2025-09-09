@@ -1,0 +1,34 @@
+{
+  "status": "ok",
+  "inputs": {
+    "selection_file": "outputs\\m7_selected_offer.json",
+    "currency": "NAD",
+    "injection_month": 1
+  },
+  "selection": {
+    "Option": "A_SAFE",
+    "Instrument": "SAFE",
+    "Rank": 1,
+    "Total_Score_0_100": 79.3,
+    "Ticket_USD": 500000.0,
+    "Valuation_Cap_NAD": 30000000.0,
+    "Discount_pct": 20.0,
+    "RevShare_preRefi_pct": 0.0,
+    "Min_IRR_Floor_pct": 0.0,
+    "Exit_Refi_Multiple": 1.0
+  },
+  "fx_note": "USD\u2192NAD @ 19.2000",
+  "outputs": {
+    "financing_schedule_parquet": "outputs\\m7_5_junior_financing.parquet",
+    "financing_schedule_csv": "outputs\\m7_5_junior_financing.csv"
+  },
+  "preview": [
+    {
+      "Month_Index": 1,
+      "Option": "A_SAFE",
+      "Instrument": "SAFE",
+      "FX_USD_to_NAD": 19.2,
+      "Junior_Equity_In_NAD_000": 9600.0
+    }
+  ]
+}

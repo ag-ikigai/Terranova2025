@@ -1,0 +1,60 @@
+{
+  "status": "ok",
+  "inputs": {
+    "outputs_dir": "C:\\TerraNova\\outputs",
+    "selection_file": "C:\\TerraNova\\outputs\\m7_selected_offer.json",
+    "financing_schedule": "C:\\TerraNova\\outputs\\m7_5_junior_financing.parquet",
+    "m6_balance_sheet": "C:\\TerraNova\\outputs\\m6_balance_sheet.parquet",
+    "m5_cfo": "C:\\TerraNova\\outputs\\m5_cash_flow_statement_final.parquet",
+    "m2_pl": "C:\\TerraNova\\outputs\\m2_pl_schedule.parquet",
+    "opening_bs_path_resolved": "C:\\TerraNova\\outputs\\m0_opening_bs.parquet",
+    "opening_bs_exists": true,
+    "fx_path": "C:\\TerraNova\\outputs\\m0_inputs\\FX_Path.parquet",
+    "currency": "NAD",
+    "fx_override_usd_to_nad": null
+  },
+  "selection": {
+    "Option": "A_SAFE",
+    "Instrument": "SAFE",
+    "Rank": 1,
+    "Total_Score_0_100": 79.3,
+    "Ticket_USD": 500000.0,
+    "Valuation_Cap_NAD": 30000000.0,
+    "Discount_pct": 20.0,
+    "RevShare_preRefi_pct": 0.0,
+    "Min_IRR_Floor_pct": 0.0,
+    "Exit_Refi_Multiple": 1.0
+  },
+  "classification": "equity_like",
+  "roles_resolved": {
+    "cash": "Cash_Balancing_Item_NAD_000",
+    "assets_total": "Assets_Total_NAD_000",
+    "liabilities_and_equity_total": "Liabilities_And_Equity_Total_NAD_000",
+    "equity_share_capital": "Equity_Share_Capital_NAD_000",
+    "equity_total": "Equity_Total_NAD_000",
+    "liabilities_total": "Liabilities_Total_NAD_000",
+    "debt_outstanding": "Debt_Outstanding_NAD_000",
+    "cfo": "CFO_NAD_000"
+  },
+  "injection_preview": [
+    {
+      "Month_Index": 1,
+      "Option": "A_SAFE",
+      "Instrument": "SAFE",
+      "FX_USD_to_NAD": 19.2,
+      "Junior_Equity_In_NAD_000": 9600.0
+    }
+  ],
+  "notes": [
+    "Cash increases by cumulative junior inflow from injection month onward.",
+    "Equity-like -> Equity_Share_Capital & Equity_Total; Debt-like -> Debt_Outstanding & Liabilities_Total.",
+    "Both Assets_Total and Liabilities_And_Equity_Total rise by the cumulative injection.",
+    "P&L is a pass-through in this step (no booking for SAFE). Debt-like accruals can be layered in M8."
+  ],
+  "outputs": {
+    "balance_sheet_parquet": "C:\\TerraNova\\outputs\\m7_5b_balance_sheet.parquet",
+    "cash_flow_parquet": "C:\\TerraNova\\outputs\\m7_5b_cash_flow.parquet",
+    "profit_and_loss_parquet": "C:\\TerraNova\\outputs\\m7_5b_profit_and_loss.parquet",
+    "smoke_report_md": "C:\\TerraNova\\outputs\\m7_5b_smoke_report.md"
+  }
+}
