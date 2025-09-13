@@ -1,0 +1,1 @@
+[SMOKE] Catalog count=11 ; Values rows=1

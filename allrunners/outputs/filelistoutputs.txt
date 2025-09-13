@@ -1,0 +1,60 @@
+ Volume in drive C is Windows
+ Volume Serial Number is 0258-3566
+
+ Directory of C:\TerraNova\outputs
+
+09/10/2025  01:03 AM    <DIR>          .
+09/06/2025  12:17 PM    <DIR>          ..
+09/07/2025  09:10 PM               850 contracts_validate_debug.json
+09/10/2025  01:03 AM                 0 filelistoutputs.txt
+09/04/2025  08:34 PM             3,170 file_details_outputundermain.txt
+09/05/2025  07:06 PM             3,658 m0_calendar.parquet
+08/27/2025  08:59 PM    <DIR>          m0_inputs
+09/05/2025  07:06 PM             2,433 m0_opening_bs.parquet
+09/05/2025  07:06 PM               204 m0_smoke_report.md
+09/05/2025  07:06 PM             2,211 m1_capex_schedule.parquet
+09/05/2025  07:06 PM             2,179 m1_depreciation_schedule.parquet
+09/05/2025  07:06 PM             2,877 m1_opex_schedule.parquet
+09/05/2025  07:06 PM             1,988 m1_revenue_schedule.parquet
+09/05/2025  07:06 PM                92 m1_smoke_report.md
+09/05/2025  07:06 PM             8,893 m2_pl_schedule.parquet
+09/05/2025  07:06 PM                92 m2_smoke_report.md
+09/05/2025  07:06 PM             5,198 m2_working_capital_schedule.parquet
+09/07/2025  09:10 PM             4,061 m3_finance_index.parquet
+09/07/2025  09:10 PM             5,018 m3_insurance_schedule.parquet
+09/07/2025  09:10 PM             5,564 m3_revolver_schedule.parquet
+09/07/2025  09:10 PM               196 m3_smoke_report.md
+09/06/2025  11:20 PM             1,008 m4_enrich_debug.json
+09/07/2025  09:10 PM                71 m4_smoke_report.md
+09/07/2025  09:10 PM             6,178 m4_tax_schedule.parquet
+09/07/2025  09:10 PM             4,712 m4_tax_summary.parquet
+09/10/2025  12:20 AM             3,431 m5_cash_flow_statement_final.parquet
+09/09/2025  11:53 PM             1,004 m5_cf_roles_debug.json
+09/09/2025  11:53 PM               183 m5_cf_roles_report.md
+09/10/2025  12:20 AM             2,051 m5_debug_dump.json
+09/10/2025  12:20 AM               989 m5_smoke_report.md
+09/07/2025  09:10 PM            12,397 m6_balance_sheet.parquet
+09/07/2025  09:10 PM             1,089 m6_debug_dump.json
+09/07/2025  09:10 PM               505 m6_smoke_report.md
+09/10/2025  12:59 AM             7,956 m7_5b_balance_sheet.parquet
+09/10/2025  12:59 AM             9,285 m7_5b_cash_flow.parquet
+09/10/2025  12:59 AM             1,062 m7_5b_debug.json
+09/10/2025  12:59 AM            10,631 m7_5b_profit_and_loss.parquet
+09/10/2025  12:59 AM               518 m7_5b_smoke_report.md
+09/07/2025  11:13 PM               861 m7_5_debug.json
+09/07/2025  11:13 PM                97 m7_5_junior_financing.csv
+09/07/2025  11:13 PM             3,526 m7_5_junior_financing.parquet
+09/07/2025  11:13 PM               365 m7_5_smoke_report.md
+09/07/2025  09:41 PM               713 m7_r1_debug.json
+09/07/2025  09:41 PM               991 m7_r1_scores.csv
+09/07/2025  09:41 PM            11,357 m7_r1_scores.parquet
+09/07/2025  09:41 PM             1,784 m7_r1_smoke_report.md
+09/07/2025  10:01 PM               274 m7_selected_offer.json
+09/09/2025  08:11 PM               337 m8a_debug.json
+09/09/2025  08:11 PM               298 m8a_verification_report.md
+09/04/2025  05:40 PM             1,219 orchestrate_log.txt
+09/05/2025  05:18 PM             2,035 orchestrator_debug_dump.json
+09/04/2025  08:24 PM             5,617 orchestrator_log.txt
+09/05/2025  05:18 PM               852 restore_log.md
+              50 File(s)        142,080 bytes
+               3 Dir(s)  317,147,312,128 bytes free

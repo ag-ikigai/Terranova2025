@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "currency": "NAD",
+    "sources": {
+      "m2_pl": {
+        "pl_path": "outputs\\m2_pl_schedule.parquet",
+        "npat_col": "NPAT_NAD_000",
+        "da_col": "Depreciation_NAD_000"
+      },
+      "m2_wc": {
+        "wc_path": "outputs\\m2_working_capital_schedule.parquet",
+        "nwc_cf_col": "Cash_Flow_from_NWC_Change_NAD_000"
+      },
+      "m1_capex": {
+        "cfi_col": "CAPEX_Outflow_NAD_000",
+        "sign_flipped": false,
+        "path": "outputs\\m1_capex_schedule.parquet"
+      },
+      "m3_revolver": {
+        "rev_path": "outputs\\m3_revolver_schedule.parquet",
+        "month_col": "Month_Index",
+        "draw_col": "Drawdown",
+        "repay_col": "Repayment",
+        "fee_col": null,
+        "interest_col_present": true,
+        "fees_included_in_cff": false
+      },
+      "m0_opening_cash": {
+        "source": "M0:Line_Item match",
+        "path": "outputs\\m0_opening_bs.parquet",
+        "policy_default_zero": false
+      }
+    },
+    "policy": {
+      "interest_excluded_from_cff": true,
+      "opening_cash_policy_default_zero_if_absent": true
+    }
+  },
+  "preview": {
+    "Month_Index": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "CFO_NAD_000": [
+      -1472.6388888888891,
+      -363.7500000000001,
+      -1029.0833333333335,
+      -1029.0833333333335,
+      -1029.0833333333335,
+      -1029.0833333333335,
+      -1029.0833333333335,
+      -1029.0833333333335,
+      -1029.0833333333335,
+      -1029.0833333333335,
+      -1029.0833333333335,
+      -798.4166666666667
+    ],
+    "CFI_NAD_000": [
+      3372.0,
+      8050.0,
+      0.0,
+      1800.0,
+      2000.0,
+      4500.0,
+      1580.0,
+      1316.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "CFF_NAD_000": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "1_basis_of_preparation": {
+    "status": "TBD",
+    "hint": "IFRS-18 presentation basis; IAS 1 current/non-current; measurement bases."
+  },
+  "2_significant_accounting_policies": {
+    "status": "TBD",
+    "hint": "Revenue recognition, biological assets (if any), depreciation, FX policy (functional/presentation), borrowing costs."
+  },
+  "3_property_plant_and_equipment": {
+    "status": "TBD",
+    "hint": "CAPEX roll-forward; useful lives; impairment policy."
+  },
+  "4_financial_instruments": {
+    "status": "TBD",
+    "hint": "SAFE/convertible classification rationale; interest rate; liquidity risk; credit risk."
+  },
+  "5_borrowings_and_covenants": {
+    "status": "TBD",
+    "hint": "Debt terms (tenor, rate, security); covenant tests (DSCR/LLCR/PLCR) and compliance narrative."
+  },
+  "6_related_parties_and_management": {
+    "status": "TBD",
+    "hint": "If applicable."
+  },
+  "7_subsequent_events": {
+    "status": "TBD",
+    "hint": "If applicable."
+  }
+}

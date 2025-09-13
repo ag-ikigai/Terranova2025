@@ -1,0 +1,111 @@
+{
+  "params": {
+    "outputs_dir": "outputs",
+    "currency": "NAD",
+    "min_cash_buffer_nad_000": 0.0,
+    "strict": true
+  },
+  "freeze_selection": {
+    "Option": "A_SAFE",
+    "Instrument": "SAFE",
+    "Classification": "equity_like"
+  },
+  "m5_cf_cols": [
+    "Month_Index",
+    "CFO_NAD_000",
+    "CFI_NAD_000",
+    "CFF_NAD_000"
+  ],
+  "opening_cash_source": {
+    "path": "outputs\\m0_opening_bs.parquet",
+    "value_col": "Value_NAD",
+    "raw_value": 9250000.0,
+    "opening_cash_nad_000": 9250.0
+  },
+  "m2_wc_cols": [
+    "Month_Index",
+    "AR_Balance_NAD_000",
+    "Inventory_Balance_NAD_000",
+    "AP_Balance_NAD_000",
+    "NWC_Balance_NAD_000",
+    "Cash_Flow_from_NWC_Change_NAD_000"
+  ],
+  "m3_revolver_cols": [
+    "Month_Index",
+    "Line_ID",
+    "Currency",
+    "Opening_Balance",
+    "Drawdown",
+    "Repayment",
+    "Interest_Accrued",
+    "Closing_Balance"
+  ],
+  "ebitda_source": {
+    "method": "EBIT_plus_Depreciation",
+    "ebit": "EBIT_NAD_000",
+    "dep": "Depreciation_NAD_000"
+  },
+  "total_opex_source": {
+    "method": "preexisting",
+    "col": "Total_OPEX_NAD_000"
+  },
+  "wc_merged": true,
+  "revolver_policy": "treated_as_current",
+  "total_assets_source": {
+    "method": "CA_plus_detected_NCA",
+    "nca_candidates": []
+  },
+  "l_and_e_total_source": {
+    "method": "mirrored_assets"
+  },
+  "usd_twin_contexts": [
+    {
+      "context": "PL\u2192USD",
+      "fx_col": "NAD_per_USD",
+      "nad_cols": [
+        "Total_Revenue_NAD_000",
+        "Fixed_OPEX_NAD_000",
+        "Variable_OPEX_NAD_000",
+        "Total_OPEX_NAD_000",
+        "Depreciation_NAD_000",
+        "EBIT_NAD_000",
+        "Interest_Expense_NAD_000",
+        "Tax_Expense_NAD_000",
+        "NPAT_NAD_000",
+        "EBITDA_NAD_000"
+      ]
+    },
+    {
+      "context": "CF\u2192USD",
+      "fx_col": "NAD_per_USD",
+      "nad_cols": [
+        "CFO_NAD_000",
+        "CFI_NAD_000",
+        "CFF_NAD_000",
+        "Net_Cash_Flow_NAD_000",
+        "Closing_Cash_NAD_000"
+      ]
+    },
+    {
+      "context": "BS\u2192USD",
+      "fx_col": "NAD_per_USD",
+      "nad_cols": [
+        "Cash_and_Cash_Equivalents_NAD_000",
+        "AR_Balance_NAD_000",
+        "Inventory_Balance_NAD_000",
+        "AP_Balance_NAD_000",
+        "Revolver_Current_Liab_NAD_000",
+        "Current_Assets_NAD_000",
+        "Current_Liabilities_NAD_000",
+        "Total_Assets_NAD_000",
+        "Liabilities_and_Equity_Total_NAD_000"
+      ]
+    }
+  ],
+  "emitted": {
+    "pl": "outputs\\m7_5b_profit_and_loss.parquet",
+    "cf": "outputs\\m7_5b_cash_flow.parquet",
+    "bs": "outputs\\m7_5b_balance_sheet.parquet"
+  },
+  "warns": []
+}

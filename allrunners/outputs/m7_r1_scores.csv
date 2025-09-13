@@ -1,0 +1,7 @@
+Option,Instrument,Ticket_USD,Valuation_Cap_NAD,Discount_pct,RevShare_preRefi_pct,Min_IRR_Floor_pct,Conversion_Terms,Exit_Refi_Multiple,Score_Cap,Score_Discount,Score_RevShare,Score_IRRFloor,Score_ExitMult,Total_Score_0_100,Selected,Rank
+A_SAFE,SAFE,500000,30000000.0,20.0,0.0,0,Cap/Discount at refi,1.0,6.85,100.0,100.0,100.0,100.0,79.3,yes,1
+E_SAFE_Staged,SAFE,500000,2800000.0,10.0,0.0,0,Cap & Discount; staged draw (3 tranches),1.0,100.0,0.0,100.0,100.0,100.0,77.78,no,2
+B_Convertible,Convertible Note,500000,32000000.0,15.0,0.0,0,8% PIK; convert at refi,1.0,0.0,50.0,100.0,100.0,100.0,66.67,no,3
+F_ConvPlusRevShare,Convertible Note + RevShare,500000,3000000.0,10.0,2.0,14,6% PIK; 2% revshare until refi; convert at refi,1.05,99.32,0.0,33.33,12.5,50.0,37.81,no,4
+C_Pref_RevShare,Preferred Equity,500000,,,2.5,15,8% pref; buys down at refi,1.0,0.0,0.0,16.67,6.25,100.0,16.2,no,5
+D_RevShareOnly,Revenue Share,500000,,,3.0,16,Buy-out multiple at refi,1.1,0.0,0.0,0.0,0.0,0.0,0.0,no,6

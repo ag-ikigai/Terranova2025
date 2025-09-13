@@ -1,0 +1,30 @@
+{
+  "base_currency": "NAD",
+  "row_counts": {
+    "M7_5B_PL": 60,
+    "M7_5B_BS": 60,
+    "M7_5B_CF": 60,
+    "Base_Timeseries": 60,
+    "FX_Curve": 60,
+    "Promoter_Monthly": 60,
+    "Promoter_Yearly": 5,
+    "Investor_Selected": 1,
+    "Lender_Monthly": 60,
+    "Lender_Yearly": 5,
+    "Benchmark_Values": 1
+  },
+  "excel_engine": "engine=xlsxwriter",
+  "inputs": {
+    "ifrs_rows": 1020,
+    "bench_catalog_keys": "n/a",
+    "notes_sections": [
+      "1_basis_of_preparation",
+      "2_significant_accounting_policies",
+      "3_property_plant_and_equipment",
+      "4_financial_instruments",
+      "5_borrowings_and_covenants",
+      "6_related_parties_and_management",
+      "7_subsequent_events"
+    ]
+  }
+}

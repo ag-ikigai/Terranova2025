@@ -1,0 +1,81 @@
+{
+  "inputs": {
+    "pl_cols": [
+      "Month_Index",
+      "Total_Revenue_NAD_000",
+      "Fixed_OPEX_NAD_000",
+      "Variable_OPEX_NAD_000",
+      "Total_OPEX_NAD_000",
+      "Depreciation_NAD_000",
+      "EBIT_NAD_000",
+      "Interest_Expense_NAD_000",
+      "Tax_Expense_NAD_000",
+      "NPAT_NAD_000",
+      "EBITDA_NAD_000",
+      "Total_Revenue_USD_000",
+      "Fixed_OPEX_USD_000",
+      "Variable_OPEX_USD_000",
+      "Total_OPEX_USD_000",
+      "Depreciation_USD_000",
+      "EBIT_USD_000",
+      "Interest_Expense_USD_000",
+      "Tax_Expense_USD_000",
+      "NPAT_USD_000",
+      "EBITDA_USD_000",
+      "Calendar_Year",
+      "Calendar_Quarter"
+    ],
+    "bs_cols": [
+      "Month_Index",
+      "Cash_and_Cash_Equivalents_NAD_000",
+      "AR_Balance_NAD_000",
+      "Inventory_Balance_NAD_000",
+      "AP_Balance_NAD_000",
+      "Revolver_Current_Liab_NAD_000",
+      "Current_Assets_NAD_000",
+      "Current_Liabilities_NAD_000",
+      "Total_Assets_NAD_000",
+      "Liabilities_and_Equity_Total_NAD_000",
+      "Cash_and_Cash_Equivalents_USD_000",
+      "AR_Balance_USD_000",
+      "Inventory_Balance_USD_000",
+      "AP_Balance_USD_000",
+      "Revolver_Current_Liab_USD_000",
+      "Current_Assets_USD_000",
+      "Current_Liabilities_USD_000",
+      "Total_Assets_USD_000",
+      "Liabilities_and_Equity_Total_USD_000",
+      "Calendar_Year",
+      "Calendar_Quarter"
+    ],
+    "cf_cols": [
+      "Month_Index",
+      "CFO_NAD_000",
+      "CFI_NAD_000",
+      "CFF_NAD_000",
+      "Net_Cash_Flow_NAD_000",
+      "Closing_Cash_NAD_000",
+      "CFO_USD_000",
+      "CFI_USD_000",
+      "CFF_USD_000",
+      "Net_Cash_Flow_USD_000",
+      "Closing_Cash_USD_000",
+      "Calendar_Year",
+      "Calendar_Quarter"
+    ]
+  },
+  "warnings": [],
+  "params": {
+    "discount_rate_annual": 0.12
+  },
+  "shapes": {
+    "monthly": [
+      60,
+      15
+    ],
+    "yearly": [
+      5,
+      14
+    ]
+  }
+}

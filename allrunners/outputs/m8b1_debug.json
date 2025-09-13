@@ -1,0 +1,24 @@
+{
+  "warns": [],
+  "fx_candidates": [
+    "outputs\\m8b_fx_curve.parquet",
+    "outputs\\m0_inputs\\FX_Path.parquet"
+  ],
+  "fx_used": "outputs\\m8b_fx_curve.parquet",
+  "fx_head": {
+    "Month_Index": [
+      1,
+      2,
+      3
+    ],
+    "NAD_per_USD": [
+      18.5,
+      18.52,
+      18.54
+    ]
+  },
+  "fx_written": [
+    "outputs\\m8b_fx_curve.parquet",
+    "outputs\\m0_inputs\\FX_Path.parquet"
+  ]
+}

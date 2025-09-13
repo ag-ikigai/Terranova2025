@@ -1,0 +1,34 @@
+{
+  "found": {
+    "m2_pl": "C:\\TerraNova\\outputs\\m2_pl_schedule.parquet",
+    "m2_wc": "C:\\TerraNova\\outputs\\m2_working_capital_schedule.parquet",
+    "m3_debt": "C:\\TerraNova\\outputs\\m3_revolver_schedule.parquet",
+    "m4_tax": "C:\\TerraNova\\outputs\\m4_tax_schedule.parquet",
+    "m5_cfo": "C:\\TerraNova\\outputs\\m5_cash_flow_statement_final.parquet"
+  },
+  "currency": "NAD",
+  "notes": "M6 beta: cash is balancing item; wiring in v7.5",
+  "m5_cfo_columns": [
+    "Month_Index",
+    "NPAT_NAD_000",
+    "DA_NAD_000",
+    "NWC_CF_NAD_000",
+    "CFO_NAD_000"
+  ],
+  "out_file": "C:\\TerraNova\\outputs\\m6_balance_sheet.parquet",
+  "columns": [
+    "Month_Index",
+    "Equity_Retained_Earnings_NAD_000",
+    "NWC_Asset_NAD_000",
+    "NWC_Liability_NAD_000",
+    "Debt_Outstanding_NAD_000",
+    "Tax_Payable_NAD_000",
+    "Equity_Share_Capital_NAD_000",
+    "Cash_Balancing_Item_NAD_000",
+    "Assets_Total_NAD_000",
+    "Liabilities_Total_NAD_000",
+    "Equity_Total_NAD_000",
+    "Liabilities_And_Equity_Total_NAD_000",
+    "Currency"
+  ]
+}
