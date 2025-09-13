@@ -1,0 +1,35 @@
+Folder PATH listing for volume Windows
+Volume serial number is 0258-3566
+C:.
+¦   srcterramodulesdirectory_map.txt
+¦   __init__.py
+¦   
++---m0_setup
+¦   ¦   data_contract.py
+¦   ¦   engine.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           data_contract.cpython-312.pyc
+¦           engine.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---m1_operational_engines
+¦   ¦   engine.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           engine.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---m2_working_capital_pl
+¦   ¦   engine.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           engine.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---__pycache__
+        __init__.cpython-312.pyc
+        

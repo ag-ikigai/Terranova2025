@@ -1,0 +1,36 @@
+Folder PATH listing for volume Windows
+Volume serial number is 0258-3566
+C:.
+¦   directory_map_outputsuptoM2.txt
+¦   m0_calendar.parquet
+¦   m0_opening_bs.parquet
+¦   m0_smoke_report.md
+¦   m1_capex_schedule.parquet
+¦   m1_depreciation_schedule.parquet
+¦   m1_opex_schedule.parquet
+¦   m1_revenue_schedule.parquet
+¦   m1_smoke_report.md
+¦   m2_pl_schedule.parquet
+¦   m2_smoke_report.md
+¦   m2_working_capital_schedule.parquet
+¦   
++---m0_inputs
+        CAPEX_Schedule.parquet
+        Case_Library.parquet
+        Case_Selector.parquet
+        Finance_Stack.parquet
+        Financing_Stack_Scenarios.parquet
+        FX_Path.parquet
+        IFRS_Balance_Sheet.parquet
+        IFRS_Cash_Flow.parquet
+        IFRS_P&L.parquet
+        Investor_500k_Offer_Grid.parquet
+        Notes_for_Use.parquet
+        OPEX_Detail.parquet
+        Parameters.parquet
+        PFinance_Case_Selector.parquet
+        Revenue_Assumptions.parquet
+        Rev_Ramp_Seasonality.parquet
+        Units.parquet
+        Working_Capital_Tax.parquet
+        

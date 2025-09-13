@@ -1,0 +1,89 @@
+Drop-in PowerShell profile (quiet, robust, auto-heal)
+
+# --- TerraNova: auto-activate venv + quiet requirements check ---
+
+function Initialize-PythonEnv {
+    $ErrorActionPreference = "Stop"
+
+    # Find project root (nearest folder up that contains .venv)
+    $here = Get-Location
+    $root = $null
+    $scan = $here
+    while ($null -ne $scan) {
+        $activate = Join-Path (Join-Path $scan ".venv") "Scripts\Activate.ps1"
+        if (Test-Path $activate) { $root = $scan; break }
+        $scan = $scan.Parent
+    }
+    if (-not $root) { $root = $here }
+
+    $venvPath   = Join-Path $root ".venv"
+    $activatePS = Join-Path $venvPath "Scripts\Activate.ps1"
+
+    # Create venv if missing
+    if (-not (Test-Path $activatePS)) {
+        Write-Host "⚠️  No venv found. Creating at $venvPath ..."
+        py -3.13 -m venv $venvPath
+    }
+
+    # Activate
+    & $activatePS
+    Write-Host "✅ Activated venv at $venvPath"
+
+    # Always keep pip current (quiet)
+    & python -m pip install --upgrade pip -q --disable-pip-version-check
+
+    # If requirements.txt exists, ensure everything is present
+    $req = Join-Path $root "requirements.txt"
+    if (Test-Path $req) { Repair-Requirements -RequirementsPath $req -Quiet }
+
+    # Register kernel (ignore errors if already registered)
+    try { & python -m ipykernel install --user --name "terra_venv" --display-name "Python 3.13 (.venv)" | Out-Null } catch {}
+}
+
+function Test-Requirements {
+    param([string]$RequirementsPath = (Join-Path (Get-Location) "requirements.txt"))
+    if (-not (Test-Path $RequirementsPath)) { Write-Host "No requirements.txt found."; return }
+
+    # read non-empty, non-comment lines
+    $lines = Get-Content $RequirementsPath | ForEach-Object { $_.Trim() } | Where-Object { $_ -and ($_ -notmatch '^\s*#') }
+    $missing = @()
+    foreach ($line in $lines) {
+        # strip any version spec to probe presence
+        $name = $line -replace '\s*([=<>!].*)$',''
+        $null = & python -m pip show $name 2>$null
+        if (-not $?) { $missing += $line }
+    }
+    if ($missing.Count -eq 0) { Write-Host "✅ All requirements are installed." }
+    else { Write-Warning ("Missing: " + ($missing -join ", ")) }
+}
+
+function Repair-Requirements {
+    param(
+        [string]$RequirementsPath = (Join-Path (Get-Location) "requirements.txt"),
+        [switch]$Quiet
+    )
+    if (-not (Test-Path $RequirementsPath)) { Write-Host "No requirements.txt found."; return }
+
+    $lines = Get-Content $RequirementsPath | ForEach-Object { $_.Trim() } | Where-Object { $_ -and ($_ -notmatch '^\s*#') }
+    $failed = @()
+
+    foreach ($line in $lines) {
+        try {
+            if ($Quiet) { & python -m pip install -q --disable-pip-version-check $line }
+            else        { & python -m pip install     --disable-pip-version-check $line }
+        } catch {
+            $failed += $line
+        }
+    }
+
+    if ($failed.Count -gt 0) {
+        Write-Warning ("⚠️  Failed installs: " + ($failed -join ", "))
+        Write-Host  "ℹ️  Heavy packages sometimes lag on the newest Python (e.g., torch, tensorflow, quantlib, prophet)."
+        Write-Host  "    If you *must* use them now, install Python 3.12 as a side-by-side interpreter and create a 3.12 venv for those."
+    } else {
+        Write-Host "✅ Libraries confirmed."
+    }
+}
+
+# Run automatically in every new terminal
+Initialize-PythonEnv

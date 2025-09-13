@@ -1,0 +1,79 @@
+ Volume in drive C is Windows
+ Volume Serial Number is 0258-3566
+
+ Directory of C:\TerraNova\baselines\TerraNova_main_up_to_M2\src\terra_nova\modules
+
+09/05/2025  08:47 AM    <DIR>          .
+09/04/2025  08:23 PM    <DIR>          ..
+09/04/2025  08:23 PM    <DIR>          m0_setup
+09/04/2025  08:23 PM    <DIR>          m1_operational_engines
+09/04/2025  08:23 PM    <DIR>          m2_working_capital_pl
+09/05/2025  08:47 AM               817 srcterramodulesdirectory_map.txt
+09/05/2025  08:47 AM                 0 srcterramodulesfile_list.txt
+09/04/2025  08:23 PM                 0 __init__.py
+09/04/2025  08:24 PM    <DIR>          __pycache__
+               3 File(s)            817 bytes
+
+ Directory of C:\TerraNova\baselines\TerraNova_main_up_to_M2\src\terra_nova\modules\m0_setup
+
+09/04/2025  08:23 PM    <DIR>          .
+09/05/2025  08:47 AM    <DIR>          ..
+09/04/2025  08:23 PM             2,305 data_contract.py
+09/04/2025  08:23 PM             3,848 engine.py
+09/04/2025  08:23 PM                 0 __init__.py
+09/04/2025  08:24 PM    <DIR>          __pycache__
+               3 File(s)          6,153 bytes
+
+ Directory of C:\TerraNova\baselines\TerraNova_main_up_to_M2\src\terra_nova\modules\m0_setup\__pycache__
+
+09/04/2025  08:24 PM    <DIR>          .
+09/04/2025  08:23 PM    <DIR>          ..
+09/04/2025  08:24 PM             4,573 data_contract.cpython-312.pyc
+09/04/2025  08:24 PM             5,518 engine.cpython-312.pyc
+09/04/2025  08:24 PM               187 __init__.cpython-312.pyc
+               3 File(s)         10,278 bytes
+
+ Directory of C:\TerraNova\baselines\TerraNova_main_up_to_M2\src\terra_nova\modules\m1_operational_engines
+
+09/04/2025  08:23 PM    <DIR>          .
+09/05/2025  08:47 AM    <DIR>          ..
+09/04/2025  08:23 PM             6,052 engine.py
+09/04/2025  08:23 PM                 0 __init__.py
+09/04/2025  08:24 PM    <DIR>          __pycache__
+               2 File(s)          6,052 bytes
+
+ Directory of C:\TerraNova\baselines\TerraNova_main_up_to_M2\src\terra_nova\modules\m1_operational_engines\__pycache__
+
+09/04/2025  08:24 PM    <DIR>          .
+09/04/2025  08:23 PM    <DIR>          ..
+09/04/2025  08:24 PM             9,538 engine.cpython-312.pyc
+09/04/2025  08:24 PM               201 __init__.cpython-312.pyc
+               2 File(s)          9,739 bytes
+
+ Directory of C:\TerraNova\baselines\TerraNova_main_up_to_M2\src\terra_nova\modules\m2_working_capital_pl
+
+09/04/2025  08:23 PM    <DIR>          .
+09/05/2025  08:47 AM    <DIR>          ..
+09/04/2025  08:23 PM             5,724 engine.py
+09/04/2025  08:23 PM                 0 __init__.py
+09/04/2025  08:24 PM    <DIR>          __pycache__
+               2 File(s)          5,724 bytes
+
+ Directory of C:\TerraNova\baselines\TerraNova_main_up_to_M2\src\terra_nova\modules\m2_working_capital_pl\__pycache__
+
+09/04/2025  08:24 PM    <DIR>          .
+09/04/2025  08:23 PM    <DIR>          ..
+09/04/2025  08:24 PM             8,708 engine.cpython-312.pyc
+09/04/2025  08:24 PM               200 __init__.cpython-312.pyc
+               2 File(s)          8,908 bytes
+
+ Directory of C:\TerraNova\baselines\TerraNova_main_up_to_M2\src\terra_nova\modules\__pycache__
+
+09/04/2025  08:24 PM    <DIR>          .
+09/05/2025  08:47 AM    <DIR>          ..
+09/04/2025  08:24 PM               178 __init__.cpython-312.pyc
+               1 File(s)            178 bytes
+
+     Total Files Listed:
+              18 File(s)         47,849 bytes
+              23 Dir(s)  320,991,346,688 bytes free

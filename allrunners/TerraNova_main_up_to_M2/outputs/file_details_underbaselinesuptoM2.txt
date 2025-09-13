@@ -1,0 +1,50 @@
+ Volume in drive C is Windows
+ Volume Serial Number is 0258-3566
+
+ Directory of C:\TerraNova\baselines\TerraNova_main_up_to_M2\outputs
+
+09/04/2025  08:36 PM    <DIR>          .
+09/04/2025  08:23 PM    <DIR>          ..
+09/04/2025  08:28 PM             1,064 directory_map_outputsuptoM2.txt
+09/04/2025  08:36 PM                 0 file_details_underbaselinesuptoM2.txt
+09/04/2025  08:23 PM             3,658 m0_calendar.parquet
+09/04/2025  08:23 PM    <DIR>          m0_inputs
+09/04/2025  08:23 PM             2,433 m0_opening_bs.parquet
+09/04/2025  08:23 PM               204 m0_smoke_report.md
+09/04/2025  08:23 PM             2,211 m1_capex_schedule.parquet
+09/04/2025  08:23 PM             2,179 m1_depreciation_schedule.parquet
+09/04/2025  08:23 PM             2,877 m1_opex_schedule.parquet
+09/04/2025  08:23 PM             1,988 m1_revenue_schedule.parquet
+09/04/2025  08:23 PM                92 m1_smoke_report.md
+09/04/2025  08:23 PM             8,893 m2_pl_schedule.parquet
+09/04/2025  08:23 PM                92 m2_smoke_report.md
+09/04/2025  08:23 PM             5,198 m2_working_capital_schedule.parquet
+              13 File(s)         30,889 bytes
+
+ Directory of C:\TerraNova\baselines\TerraNova_main_up_to_M2\outputs\m0_inputs
+
+09/04/2025  08:23 PM    <DIR>          .
+09/04/2025  08:36 PM    <DIR>          ..
+09/04/2025  08:23 PM             4,162 CAPEX_Schedule.parquet
+09/04/2025  08:23 PM             4,721 Case_Library.parquet
+09/04/2025  08:23 PM             1,623 Case_Selector.parquet
+09/04/2025  08:23 PM            11,319 Finance_Stack.parquet
+09/04/2025  08:23 PM             5,580 Financing_Stack_Scenarios.parquet
+09/04/2025  08:23 PM             2,438 FX_Path.parquet
+09/04/2025  08:23 PM             3,952 IFRS_Balance_Sheet.parquet
+09/04/2025  08:23 PM             3,912 IFRS_Cash_Flow.parquet
+09/04/2025  08:23 PM             3,904 IFRS_P&L.parquet
+09/04/2025  08:23 PM             6,322 Investor_500k_Offer_Grid.parquet
+09/04/2025  08:23 PM             5,239 Notes_for_Use.parquet
+09/04/2025  08:23 PM             3,803 OPEX_Detail.parquet
+09/04/2025  08:23 PM             1,846 Parameters.parquet
+09/04/2025  08:23 PM             1,608 PFinance_Case_Selector.parquet
+09/04/2025  08:23 PM             5,622 Revenue_Assumptions.parquet
+09/04/2025  08:23 PM             9,365 Rev_Ramp_Seasonality.parquet
+09/04/2025  08:23 PM             2,291 Units.parquet
+09/04/2025  08:23 PM             1,842 Working_Capital_Tax.parquet
+              18 File(s)         79,549 bytes
+
+     Total Files Listed:
+              31 File(s)        110,438 bytes
+               5 Dir(s)  321,102,737,408 bytes free
