@@ -1,0 +1,49 @@
+Coverage plan (simple list)
+
+Module 0 — Setup & Validation (done)
+
+Module 1 — Operational Engines (Revenue, OPEX, CAPEX, Depreciation) (done)
+
+Module 2 — Working Capital & P&L (done)
+
+Module 3 — Financing Engine & Waterfall (done; with refi gate + rev-share payable)
+
+Module 4 — Tax Engine (corporate income tax, loss carryforward, USD mirror) ← next
+
+Module enrichM4 - Enrich Tax Payable
+
+Module 5 — Cash Flow Statements assembler (CFO/CFI/CFF, link to Module 3 & 1)
+
+Module 6 — Balance Sheet builder (link WC, debt balances, rev-share payable)
+
+Module 7.R1 — Rank Offers Investor 500k Optimization (SAFE/convertible grid) 
+
+Module 7.Human choice freezer - Freeze option by ranking or choice
+
+Module 7.5A - Junior Financing Wiring
+
+Module 7.5B - Build complete financial statements with FX Path, incorporation of junior flows properly as per IFRS
+
+Module 8 — "complete verifications" + "dashboards financial indexes building" 
+
+Module 9 — Outputs & Dashboards (exports + charts) + documents filling
+
+Implementation order (so we ship value fast)
+
+M9.0 Home & Data Overview (global controls + health)
+
+M9.5 IFRS Statements & Notes (core financials)
+
+M9.1 Promoter Scorecard
+
+M9.2 Investor View (selected offer, gates)
+
+M9.3 Lender Pack (covenants view)
+
+M9.4 Benchmarks (with editable thresholds)
+
+M9.6 Source/Audit + M9.7 Settings & Manifest
+
+Exports (Excel & PDF) + M9.8 Diagnostics
+
+This order ensures the financial statements and promoter/investor value land first, while diagnostics stay available to keep us out of “silly problems”.
