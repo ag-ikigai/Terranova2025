@@ -1,0 +1,18 @@
+Release discipline going forward
+
+Freeze each module’s outputs schema in a <module>_contract.md.
+
+Gate merges with: (1) unit tests, (2) smoke tests, and (3) contract validator.
+
+Package modules as code (not zips); tag a Git commit when smoke is green.
+
+Do not change artifact filenames without updating the contract + M5 mappings.
+
+
+Plan for M6–M9
+
+Coding Agent produces small, isolated functions per spec.
+
+Coding Auditor checks against the contracts and smoke tests.
+
+We package the module end‑to‑end in the repo, add tests, then cut a release tag.

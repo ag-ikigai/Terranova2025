@@ -1,0 +1,82 @@
+THE SUPER ESSENTIALS FROM NOW
+
+
+A) One‑line backup (repeatable)
+
+PowerShell – one line (timestamped copy to C:\TerraNova_backups\<ts>):
+
+$ts=(Get-Date).ToString('yyyyMMdd_HHmm'); robocopy C:\TerraNova C:\TerraNova_backups\TerraNova_$ts /MIR /XD .venv __pycache__ .git workspace drops /XF *.pyc *.pyo
+
+
+F) Technical runbook (how it is wired now)
+
+Entry points you used: (All VS powershell commands)
+
+M3:
+$env:PYTHONPATH="C:\TerraNova\src;C:\TerraNova\baselines\TerraNova_main_up_to_M2\src"; `
+.\.venv\Scripts\python.exe "C:\TerraNova\baselines\TerraNova_M3_FinancingEngine_v3.1.0\run.py" `
+  run_m3 --input "C:\TerraNova\InputPack\TerraNova_Input_Pack_v10_0.xlsx" --out "C:\TerraNova\outputs" --currency NAD
+
+M4:
+.\.venv\Scripts\python.exe "C:\TerraNova\baselines\TerraNova_M4_TaxEngine_v4.0.3\run.py" `
+  run_m4 --input "C:\TerraNova\InputPack\TerraNova_Input_Pack_v10_0.xlsx" --out "C:\TerraNova\outputs" --currency NAD
+
+M5 (accepts either M2 names, now canonicalizing):
+$env:PYTHONPATH="C:\TerraNova\src"; .\.venv\Scripts\python.exe .\m5_run_accept_either_v5.py --out "C:\TerraNova\outputs" --currency NAD
+
+Where things live:
+
+Source code: C:\TerraNova\src\terra_nova\modules\m0..m5 (plus baseline overlays for M0..M2 imports used by M3).
+Baselines: C:\TerraNova\baselines\TerraNova_main_up_to_M2, ...\M3_FinancingEngine_v3.1.0, ...\M4_TaxEngine_v4.0.3.
+Artifacts: C:\TerraNova\outputs\* (M2 PL & WC, M3 smoke, M4 tax, M5 cash‑flow).
+Contracts/docs/tests: C:\TerraNova\docs\, C:\TerraNova\tools\, C:\TerraNova\tests\.
+
+Debugging/trace you already have:
+outputs\m5_debug_dump.json
+outputs\m*_smoke_report.md
+orchestrator_debug_dump.json from the restore process (kept for provenance)
+
+G) One‑liners you’ll likely reuse (run end‑to‑end)
+
+# M3 → M4 → M5 (idempotent)
+$env:PYTHONPATH="C:\TerraNova\src;C:\TerraNova\baselines\TerraNova_main_up_to_M2\src"; .\.venv\Scripts\python.exe "C:\TerraNova\baselines\TerraNova_M3_FinancingEngine_v3.1.0\run.py" run_m3 --input "C:\TerraNova\InputPack\TerraNova_Input_Pack_v10_0.xlsx" --out "C:\TerraNova\outputs" --currency NAD ; .\.venv\Scripts\python.exe "C:\TerraNova\baselines\TerraNova_M4_TaxEngine_v4.0.3\run.py" run_m4 --input "C:\TerraNova\InputPack\TerraNova_Input_Pack_v10_0.xlsx" --out "C:\TerraNova\outputs" --currency NAD ; $env:PYTHONPATH="C:\TerraNova\src"; .\.venv\Scripts\python.exe .\m5_run_accept_either_v5.py --out "C:\TerraNova\outputs" --currency NAD
+
+
+# Validate contracts + run smoke tests
+.\.venv\Scripts\python.exe .\tools\validate_contracts.py outputs ; .\.venv\Scripts\python.exe -m unittest -v
+
+
+“Poor‑man’s CI” PowerShell script (M3→M4→M5 + contracts + smoke tests)
+Run it:
+
+powershell -ExecutionPolicy Bypass -File .\tools\ci_smoke.ps1
+
+
+This becomes your local gate before pushing or tagging.
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++
+Solid one‑liners you can keep using
+
+These reproduce exactly what worked for you.
+
+Run M3 → M4 → M5 (PowerShell, single line each):
+
+$env:PYTHONPATH="C:\TerraNova\src;C:\TerraNova\baselines\TerraNova_main_up_to_M2\src"; .\.venv\Scripts\python.exe .\baselines\TerraNova_M3_FinancingEngine_v3.1.0\run.py run_m3 --input ".\InputPack\TerraNova_Input_Pack_v10_0.xlsx" --out ".\outputs" --currency NAD
+
+.\.venv\Scripts\python.exe .\baselines\TerraNova_M4_TaxEngine_v4.0.3\run.py run_m4 --input ".\InputPack\TerraNova_Input_Pack_v10_0.xlsx" --out ".\outputs" --currency NAD
+
+.\.venv\Scripts\python.exe -c "from terra_nova.modules.m5_cash_flow.runner import run_m5; run_m5(r'.\outputs','NAD')"
+
+
+Validate contracts and smoke tests:
+
+.\.venv\Scripts\python.exe .\tools\validate_contracts.py .\outputs ; .\.venv\Scripts\python.exe -m unittest -v tests\smoke\test_pipeline_smoke.py
+
+
+Back up the current state (code + docs + tests + tools + outputs):
+
+robocopy "C:\TerraNova" "D:\TN_Backups\TerraNova_$(Get-Date -Format yyyyMMdd_HHmm)" /MIR /XD .venv .git baselines\drops baselines\workspace
+
+
+
