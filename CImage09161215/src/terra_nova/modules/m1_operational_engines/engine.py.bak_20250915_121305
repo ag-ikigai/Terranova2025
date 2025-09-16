@@ -1,0 +1,291 @@
+# C:\TerraNova\src\terra_nova\modules\m1_operational_engines\engine.py
+from __future__ import annotations
+
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Dict, List, Tuple
+
+import numpy as np
+import pandas as pd
+
+# Reuse the validated Input Pack loader from M0 to remain schema-faithful.
+from terra_nova.modules.m0_setup.engine import load_and_validate_input_pack  # noqa: E402
+
+# ---------- data types ----------
+
+@dataclass
+class CropRow:
+    crop: str
+    hectares: float
+    yield_t_ha: float
+    price_per_t: float
+    cycles_per_year: float
+    y1: float
+    y2: float
+    y3: float
+    seasonality: List[float]  # length 12, normalized sum=1 (crop-level)
+
+
+# ---------- utilities ----------
+
+def _ensure_dir(p: Path) -> None:
+    p.mkdir(parents=True, exist_ok=True)
+
+
+def _month_cols_case_insensitive(df: pd.DataFrame) -> List[str]:
+    """Return ['M1'..'M12'] by matching case-insensitively in df columns."""
+    out: List[str] = []
+    cols_lower = {c.lower(): c for c in df.columns}
+    for i in range(1, 13):
+        key = f"m{i}".lower()
+        if key not in cols_lower:
+            raise RuntimeError(f"[M1] Rev_Ramp_Seasonality missing month column 'M{i}'")
+        out.append(cols_lower[key])
+    return out
+
+
+def _price_per_t(row: pd.Series) -> float:
+    """
+    Prefer 'Price_NAD_per_t'; if absent, derive from 'Price_NAD_per_kg' * 1000.
+    """
+    if "Price_NAD_per_t" in row and pd.notna(row["Price_NAD_per_t"]):
+        return float(row["Price_NAD_per_t"])
+    if "Price_NAD_per_kg" in row and pd.notna(row["Price_NAD_per_kg"]):
+        return float(row["Price_NAD_per_kg"]) * 1000.0
+    raise RuntimeError("[M1] Need Price_NAD_per_t or Price_NAD_per_kg in Revenue_Assumptions.")
+
+
+def _seasonality_vector(row: pd.Series, mcols: List[str]) -> List[float]:
+    vals = [float(row.get(c, 0.0) or 0.0) for c in mcols]
+    s = float(sum(vals))
+    if s <= 0:
+        # Flat split if seasonality is not provided
+        return [1.0 / 12.0] * 12
+    return [v / s for v in vals]
+
+
+def _seasonality_y1_gate(s_norm: List[float]) -> List[float]:
+    """
+    Year-1 rule (frozen in this project):
+      - Months 1..6 = 0
+      - Months 7..12 re-normalized to 1.0
+    """
+    out = [0.0] * 12
+    tail = s_norm[6:12]
+    s_tail = float(sum(tail))
+    tail = [1.0 / 6.0] * 6 if s_tail <= 0 else [v / s_tail for v in tail]
+    out[6:12] = tail
+    return out
+
+
+def _norm_objects_for_parquet(df: pd.DataFrame) -> pd.DataFrame:
+    out = df.copy()
+    for c in out.columns:
+        if pd.api.types.is_object_dtype(out[c]):
+            out[c] = out[c].map(
+                lambda x: x.decode("utf-8", "ignore") if isinstance(x, (bytes, bytearray)) else x
+            )
+            out[c] = out[c].astype("string")
+    return out
+
+
+# ---------- builders ----------
+
+def build_revenue_schedule(sheets: Dict[str, pd.DataFrame], months: int) -> pd.DataFrame:
+    ra = sheets["Revenue_Assumptions"].copy()
+    rs = sheets["Rev_Ramp_Seasonality"].copy()
+
+    # Basic columns (per data contract)
+    need_ra = ["Crop", "Hectares", "Yield_t_ha", "Cycles_per_year"]
+    for c in need_ra:
+        if c not in ra.columns:
+            raise RuntimeError(f"[M1] Revenue_Assumptions missing column '{c}'")
+
+    need_rs = ["Crop", "Y1_Ramp", "Y2_Ramp", "Y3_Ramp"]
+    for c in need_rs:
+        if c not in rs.columns:
+            raise RuntimeError(f"[M1] Rev_Ramp_Seasonality missing column '{c}'")
+
+    month_cols = _month_cols_case_insensitive(rs)
+
+    merged = pd.merge(
+        ra,
+        rs[["Crop", "Y1_Ramp", "Y2_Ramp", "Y3_Ramp"] + month_cols],
+        on="Crop",
+        how="inner",
+        validate="one_to_one",
+    )
+    if merged.empty:
+        raise RuntimeError("[M1] RA ⨝ Seasonality produced no rows (check 'Crop' labels).")
+
+    # Crop rows
+    rows: List[CropRow] = []
+    for _, r in merged.iterrows():
+        rows.append(
+            CropRow(
+                crop=str(r["Crop"]).strip(),
+                hectares=float(r["Hectares"]),
+                yield_t_ha=float(r["Yield_t_ha"]),
+                price_per_t=_price_per_t(r),
+                cycles_per_year=float(r["Cycles_per_year"]),
+                y1=float(r["Y1_Ramp"]),
+                y2=float(r["Y2_Ramp"]),
+                y3=float(r["Y3_Ramp"]),
+                seasonality=_seasonality_vector(r, month_cols),
+            )
+        )
+
+    def annual_base_nad(c: CropRow) -> float:
+        return c.hectares * c.yield_t_ha * c.cycles_per_year * c.price_per_t
+
+    def ramp(c: CropRow, y: int) -> float:
+        return c.y1 if y == 1 else (c.y2 if y == 2 else (c.y3 if y == 3 else 1.0))
+
+    schedule: List[Dict] = []
+    for m in range(1, months + 1):
+        y = (m - 1) // 12 + 1
+        moy = (m - 1) % 12  # 0..11
+        for c in rows:
+            base = annual_base_nad(c)
+            s_full = c.seasonality
+            s_y1 = _seasonality_y1_gate(s_full)
+            w = s_y1[moy] if y == 1 else s_full[moy]
+            nad = base * ramp(c, y) * w
+            schedule.append(
+                {
+                    "Month_Index": m,
+                    "Crop": c.crop,
+                    "Monthly_Revenue_NAD_000": float(nad) / 1000.0,
+                }
+            )
+
+    df = pd.DataFrame.from_records(schedule)
+    df.sort_values(["Month_Index", "Crop"], inplace=True)
+    df["Month_Index"] = df["Month_Index"].astype("int64")
+    df["Monthly_Revenue_NAD_000"] = df["Monthly_Revenue_NAD_000"].astype("float64")
+    return df
+
+
+def build_opex_schedule(sheets: Dict[str, pd.DataFrame], months: int) -> pd.DataFrame:
+    """
+    OPEX_Detail has per-year totals (Y1..Y5). We allocate evenly across months of each year.
+    Units are kept in NAD '000 (as per model convention).
+    """
+    if "OPEX_Detail" not in sheets or sheets["OPEX_Detail"].empty:
+        # Emit zeros but keep the column names, to satisfy downstream and CI
+        return pd.DataFrame(
+            {"Month_Index": np.arange(1, months + 1, dtype="int64"), "Monthly_OPEX_NAD_000": 0.0}
+        )
+
+    od = sheets["OPEX_Detail"].copy()
+    # Accept any subset of Y1..Y5 based on horizon
+    max_years = (months + 11) // 12
+    year_cols = [f"Y{i}" for i in range(1, min(5, max_years) + 1)]
+    for c in year_cols:
+        if c not in od.columns:
+            od[c] = 0.0
+
+    monthly: List[float] = []
+    for m in range(1, months + 1):
+        y = (m - 1) // 12 + 1
+        ycol = f"Y{y}" if f"Y{y}" in od.columns else None
+        if ycol is None:
+            monthly.append(0.0)
+        else:
+            yearly_total = pd.to_numeric(od[ycol], errors="coerce").fillna(0.0).sum()
+            monthly.append(float(yearly_total) / 12.0)
+
+    df = pd.DataFrame(
+        {"Month_Index": np.arange(1, months + 1, dtype="int64"), "Monthly_OPEX_NAD_000": monthly}
+    )
+    df["Monthly_OPEX_NAD_000"] = df["Monthly_OPEX_NAD_000"].astype("float64")
+    return df
+
+
+def build_capex_schedule(sheets: Dict[str, pd.DataFrame], months: int) -> pd.DataFrame:
+    """
+    CAPEX_Schedule has rows with Month (1..N) and Amount_NAD_000. We sum by month.
+    """
+    if "CAPEX_Schedule" not in sheets or sheets["CAPEX_Schedule"].empty:
+        return pd.DataFrame(
+            {"Month_Index": np.arange(1, months + 1, dtype="int64"), "Monthly_CAPEX_NAD_000": 0.0}
+        )
+
+    cs = sheets["CAPEX_Schedule"].copy()
+    for req in ["Month", "Amount_NAD_000"]:
+        if req not in cs.columns:
+            raise RuntimeError(f"[M1] CAPEX_Schedule missing column '{req}'")
+
+    cs["Month"] = pd.to_numeric(cs["Month"], errors="coerce").fillna(0).astype(int)
+    cs["Amount_NAD_000"] = pd.to_numeric(cs["Amount_NAD_000"], errors="coerce").fillna(0.0)
+
+    grp = cs.loc[(cs["Month"] >= 1) & (cs["Month"] <= months)].groupby("Month")["Amount_NAD_000"].sum()
+    out = pd.DataFrame({"Month_Index": np.arange(1, months + 1, dtype="int64")})
+    out = out.merge(
+        grp.rename("Monthly_CAPEX_NAD_000"),
+        left_on="Month_Index",
+        right_index=True,
+        how="left",
+    ).fillna({"Monthly_CAPEX_NAD_000": 0.0})
+    out["Monthly_CAPEX_NAD_000"] = out["Monthly_CAPEX_NAD_000"].astype("float64")
+    return out
+
+
+def build_depreciation_schedule(sheets: Dict[str, pd.DataFrame], months: int) -> pd.DataFrame:
+    """
+    Straight-line depreciation per item:
+    - Start at the item's 'Month' (available-for-use simplification).
+    - Monthly rate = Amount_NAD_000 / (Depreciation_Life_Yrs * 12), only if Life_Yrs > 0.
+    """
+    dep = np.zeros(months, dtype="float64")
+    if "CAPEX_Schedule" not in sheets or sheets["CAPEX_Schedule"].empty:
+        return pd.DataFrame(
+            {"Month_Index": np.arange(1, months + 1, dtype="int64"), "Monthly_Depreciation_NAD_000": dep}
+        )
+
+    cs = sheets["CAPEX_Schedule"].copy()
+    for req in ["Month", "Amount_NAD_000", "Depreciation_Life_Yrs"]:
+        if req not in cs.columns:
+            raise RuntimeError(f"[M1] CAPEX_Schedule missing column '{req}'")
+
+    cs["Month"] = pd.to_numeric(cs["Month"], errors="coerce").fillna(0).astype(int)
+    cs["Amount_NAD_000"] = pd.to_numeric(cs["Amount_NAD_000"], errors="coerce").fillna(0.0)
+    cs["Depreciation_Life_Yrs"] = pd.to_numeric(cs["Depreciation_Life_Yrs"], errors="coerce").fillna(0.0)
+
+    for _, r in cs.iterrows():
+        m0 = int(r["Month"])
+        amt = float(r["Amount_NAD_000"])
+        yrs = float(r["Depreciation_Life_Yrs"])
+        if m0 < 1 or m0 > months or yrs <= 0 or amt <= 0:
+            continue
+        n = int(round(yrs * 12))
+        per_m = amt / float(n)
+        start = m0
+        end = min(months, m0 + n - 1)
+        dep[start - 1 : end] += per_m
+
+    return pd.DataFrame(
+        {
+            "Month_Index": np.arange(1, months + 1, dtype="int64"),
+            "Monthly_Depreciation_NAD_000": dep,
+        }
+    )
+
+
+# ---------- compatibility shim for baseline M3 (if any import tries to call it) ----------
+
+def create_capex_and_depreciation_schedules(input_pack: Path | str, out_dir: Path | str, currency: str = "NAD"
+                                           ) -> Tuple[pd.DataFrame, pd.DataFrame]:
+    """
+    Back-compat shim for any legacy M3 import:
+      returns (capex_df, depreciation_df) with the canonical columns.
+    """
+    sheets = load_and_validate_input_pack(Path(input_pack))
+    if "Parameters" in sheets and not sheets["Parameters"].empty:
+        H = int(pd.to_numeric(sheets["Parameters"]["Value"], errors="coerce")[sheets["Parameters"]["Key"] == "HORIZON_MONTHS"].iloc[0])
+    else:
+        H = 60
+    capex = build_capex_schedule(sheets, H)
+    deprec = build_depreciation_schedule(sheets, H)
+    # do not write here; runner handles emission
+    return capex, deprec

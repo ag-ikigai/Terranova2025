@@ -1,0 +1,220 @@
+Folder PATH listing for volume Windows
+Volume serial number is 0258-3566
+C:.
+¦   structureOFmodules.txt
+¦   __init__.py
+¦   
++---m0_setup
+¦   ¦   data_contract.py
+¦   ¦   engine.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           data_contract.cpython-312.pyc
+¦           engine.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---m0_setup.bak_20250904_224545
+¦   ¦   data_contract.py
+¦   ¦   engine.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           data_contract.cpython-312.pyc
+¦           engine.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---m1_operational_engines
+¦   ¦   engine.py
+¦   ¦   runner.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           engine.cpython-312.pyc
+¦           runner.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---m1_operational_engines.bak_20250904_224545
+¦   ¦   engine.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           engine.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---m2_working_capital_pl
+¦   ¦   runner.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           engine.cpython-312.pyc
+¦           runner.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---m2_working_capital_pl.bak_20250904_224545
+¦   ¦   engine.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           engine.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---m3_financing
+¦   ¦   engine.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           engine.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---m3_financing.bak_20250904_224545
+¦   ¦   engine.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           engine.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---m3_financing_engine
+¦   ¦   engine.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           engine.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---m4_tax
+¦   ¦   engine.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           engine.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---m4_tax.bak_20250904_224545
+¦   ¦   engine.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           engine.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---m5_cash_flow
+¦   ¦   engine.py
+¦   ¦   runner.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           engine.cpython-312.pyc
+¦           runner.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---m6_balance_sheet
+¦   ¦   engine.py
+¦   ¦   runner.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           engine.cpython-312.pyc
+¦           runner.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---m7_5b_rebuild
+¦   ¦   runner.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           runner.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---m7_5_wiring
+¦   ¦   runner.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           runner.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---m7_optimizer
+¦   ¦   runner.py
+¦   ¦   solver_adapter.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           runner.cpython-312.pyc
+¦           solver_adapter.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---m8A_verifier
+¦   ¦   runner.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           runner.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---m8B_1_base_timeseries
+¦   ¦   runner.py
+¦   ¦   runner_bak.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           runner.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---m8B_2_promoter_scorecard
+¦   ¦   runner.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           runner.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---m8B_3_investor_engine
+¦   ¦   runner.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           runner.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---m8B_4_lender_pack
+¦   ¦   runner.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           runner.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---m8B_5_benchmarks
+¦   ¦   runner.py
+¦   ¦   Untitled-1.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           runner.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---m8B_6_ifrs_presentation
+¦   ¦   runner.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           runner.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---m9_0_pack
+¦   ¦   runner.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           runner.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---m9_5_app
+¦       app.py
+¦       __init__.py
+¦       
++---__pycache__
+        __init__.cpython-312.pyc
+        
