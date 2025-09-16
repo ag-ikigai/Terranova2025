@@ -1,0 +1,33 @@
+{
+  "strict": true,
+  "currency": "NAD",
+  "notes": [],
+  "fx_source_path": "m0_inputs\\FX_Path.parquet",
+  "fx_source_column": "NAD_per_USD",
+  "pl_source": "m2_pl_schedule.parquet",
+  "pl_mapping": {
+    "Total_Revenue_NAD_000": "Total_Revenue_NAD_000",
+    "Total_OPEX_NAD_000": "Total_OPEX_NAD_000",
+    "EBITDA_NAD_000": "EBITDA_NAD_000",
+    "Operating_Income_NAD_000": "EBIT_NAD_000",
+    "Net_Income_NAD_000": "NPAT_NAD_000",
+    "Depreciation_NAD_000": "Depreciation_NAD_000"
+  },
+  "cf_source": "m5_cash_flow_statement_final.parquet",
+  "cf_mapping": {
+    "CFO_NAD_000": "Cash_Flow_from_Operations_NAD_000",
+    "CFI_NAD_000": "CFI_NAD_000",
+    "CFF_NAD_000": "CFF_NAD_000"
+  },
+  "bs_source": "m6_balance_sheet.parquet",
+  "bs_mapping": {
+    "Cash_and_Cash_Equivalents_NAD_000": "Cash_and_Cash_Equivalents_NAD_000",
+    "Assets_Total_NAD_000": "Assets_Total_NAD_000",
+    "Liabilities_And_Equity_Total_NAD_000": "Liabilities_And_Equity_Total_NAD_000"
+  },
+  "bs_balances_nad": true,
+  "cash_reconciliation": "M6_BS_Cash_Authoritative",
+  "cf_bs_cash_link_ok": true,
+  "fx_translation_applied": true,
+  "first_nonzero_revenue_month": null
+}

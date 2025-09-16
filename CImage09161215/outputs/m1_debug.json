@@ -1,0 +1,11 @@
+{
+  "input_pack": "C:\\TerraNova\\InputPack\\TerraNova_Input_Pack_v10_0.xlsx",
+  "months": 60,
+  "first_nonzero_revenue_month": 7,
+  "row_counts": {
+    "m1_revenue_schedule.parquet": 300,
+    "m1_opex_schedule.parquet": 60,
+    "m1_capex_schedule.parquet": 60,
+    "m1_depreciation_schedule.parquet": 60
+  }
+}

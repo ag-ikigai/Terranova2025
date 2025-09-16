@@ -1,0 +1,27 @@
+{
+  "pl_cols": [
+    "Month_Index",
+    "Total_Revenue_NAD_000",
+    "Depreciation_NAD_000",
+    "NPAT_NAD_000",
+    "FX_NAD_per_USD"
+  ],
+  "bs_cols": [
+    "Month_Index",
+    "Cash_and_Cash_Equivalents_NAD_000",
+    "AR_Balance_NAD_000",
+    "Inventory_Balance_NAD_000",
+    "AP_Balance_NAD_000",
+    "NWC_Balance_NAD_000",
+    "FX_NAD_per_USD"
+  ],
+  "cf_cols": [
+    "Month_Index",
+    "CFO_NAD_000",
+    "CFI_NAD_000",
+    "CFF_NAD_000",
+    "Closing_Cash_NAD_000",
+    "FX_NAD_per_USD"
+  ],
+  "rows": 480
+}

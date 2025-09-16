@@ -1,0 +1,22 @@
+# M0 Smoke Report — 2025-09-16 00:36:46
+
+- m0_calendar.parquet: 60 rows
+- m0_inputs/CAPEX_Schedule.parquet: 12 rows
+- m0_inputs/Case_Library.parquet: 5 rows
+- m0_inputs/Case_Selector.parquet: 1 rows
+- m0_inputs/FX_Path.parquet: 60 rows
+- m0_inputs/Finance_Stack.parquet: 8 rows
+- m0_inputs/Financing_Stack_Scenarios.parquet: 5 rows
+- m0_inputs/IFRS_Balance_Sheet.parquet: 15 rows
+- m0_inputs/IFRS_Cash_Flow.parquet: 13 rows
+- m0_inputs/IFRS_P&L.parquet: 12 rows
+- m0_inputs/Investor_500k_Offer_Grid.parquet: 6 rows
+- m0_inputs/Notes_for_Use.parquet: 63 rows
+- m0_inputs/OPEX_Detail.parquet: 2 rows
+- m0_inputs/PFinance_Case_Selector.parquet: 1 rows
+- m0_inputs/Parameters.parquet: 10 rows
+- m0_inputs/Rev_Ramp_Seasonality.parquet: 5 rows
+- m0_inputs/Revenue_Assumptions.parquet: 5 rows
+- m0_inputs/Units.parquet: 9 rows
+- m0_inputs/Working_Capital_Tax.parquet: 8 rows
+- m0_opening_bs.parquet: 2 rows

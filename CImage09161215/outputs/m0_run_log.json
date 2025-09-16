@@ -1,0 +1,27 @@
+{
+  "started_at": "2025-09-16T00:36:46",
+  "input_pack": "C:\\TerraNova\\InputPack\\TerraNova_Input_Pack_v10_0.xlsx",
+  "outputs_dir": "C:\\TerraNova\\outputs",
+  "written": {
+    "m0_inputs/Case_Selector.parquet": 1,
+    "m0_inputs/Case_Library.parquet": 5,
+    "m0_inputs/Parameters.parquet": 10,
+    "m0_inputs/Units.parquet": 9,
+    "m0_inputs/Revenue_Assumptions.parquet": 5,
+    "m0_inputs/Rev_Ramp_Seasonality.parquet": 5,
+    "m0_inputs/OPEX_Detail.parquet": 2,
+    "m0_inputs/CAPEX_Schedule.parquet": 12,
+    "m0_inputs/FX_Path.parquet": 60,
+    "m0_inputs/Working_Capital_Tax.parquet": 8,
+    "m0_inputs/Financing_Stack_Scenarios.parquet": 5,
+    "m0_inputs/PFinance_Case_Selector.parquet": 1,
+    "m0_inputs/Finance_Stack.parquet": 8,
+    "m0_inputs/Investor_500k_Offer_Grid.parquet": 6,
+    "m0_inputs/IFRS_P&L.parquet": 12,
+    "m0_inputs/IFRS_Balance_Sheet.parquet": 15,
+    "m0_inputs/IFRS_Cash_Flow.parquet": 13,
+    "m0_inputs/Notes_for_Use.parquet": 63,
+    "m0_calendar.parquet": 60,
+    "m0_opening_bs.parquet": 2
+  }
+}

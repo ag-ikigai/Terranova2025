@@ -1,0 +1,64 @@
+{
+  "version": "1.0",
+  "base_currency": "NAD",
+  "tabs": [
+    {
+      "id": "overview",
+      "title": "Overview"
+    },
+    {
+      "id": "promoters",
+      "title": "Promoters"
+    },
+    {
+      "id": "investors",
+      "title": "Investors"
+    },
+    {
+      "id": "lenders",
+      "title": "Lenders"
+    },
+    {
+      "id": "ifrs",
+      "title": "IFRS Financials"
+    },
+    {
+      "id": "benchmarks",
+      "title": "Benchmarks"
+    },
+    {
+      "id": "downloads",
+      "title": "Downloads"
+    }
+  ],
+  "datasets": {
+    "pl": true,
+    "bs": true,
+    "cf": true,
+    "ifrs_statements": true,
+    "promoter_m": true,
+    "promoter_y": true,
+    "investor_sel": true,
+    "lender_m": true,
+    "lender_y": true,
+    "bench_vals": true,
+    "bench_catalog": true,
+    "base_timeseries": true,
+    "fx_curve": true
+  },
+  "assets": {
+    "logo_path": "src/terra_nova/modules/m9_5_app/assets/logo.jpg"
+  },
+  "branding": {
+    "project_logo": "B1_Terra Nova Project Logo.jpg"
+  },
+  "audiences": [
+    "promoters",
+    "investors",
+    "lenders"
+  ],
+  "currency_toggle": [
+    "NAD",
+    "USD"
+  ]
+}

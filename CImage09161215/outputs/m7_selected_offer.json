@@ -1,0 +1,12 @@
+{
+  "Option": "A_SAFE",
+  "Instrument": "SAFE",
+  "Rank": 1,
+  "Total_Score_0_100": 100.0,
+  "Ticket_USD": 500000.0,
+  "Valuation_Cap_NAD": 30000000.0,
+  "Discount_pct": 20.0,
+  "RevShare_preRefi_pct": 0.0,
+  "Min_IRR_Floor_pct": 0.0,
+  "Exit_Refi_Multiple": 1.0
+}

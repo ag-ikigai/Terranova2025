@@ -1,0 +1,12 @@
+# M9.0 Smoke
+- M7_5B_PL: 60 rows
+- M7_5B_BS: 60 rows
+- M7_5B_CF: 60 rows
+- Base_Timeseries: 60 rows
+- FX_Curve: 60 rows
+- Promoter_Monthly: 60 rows
+- Promoter_Yearly: 5 rows
+- Investor_Selected: 1 rows
+- Lender_Monthly: 60 rows
+- Lender_Yearly: 5 rows
+- Benchmark_Values: 1 rows

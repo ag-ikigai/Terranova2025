@@ -1,0 +1,9 @@
+{
+  "currency": "NAD",
+  "gates": [
+    {"month": 24, "equity_value_nad": 32000000},
+    {"month": 36, "equity_value_nad": 40000000},
+    {"month": 42, "equity_value_nad": 45000000},
+    {"month": 48, "equity_value_nad": 52000000}
+  ]
+}

@@ -1,0 +1,165 @@
+ Volume in drive C is Windows
+ Volume Serial Number is 0258-3566
+
+ Directory of C:\TerraNova\outputs
+
+09/14/2025  05:39 PM    <DIR>          .
+09/06/2025  12:17 PM    <DIR>          ..
+09/12/2025  11:55 PM    <DIR>          assets
+09/12/2025  11:21 PM               878 Base_Timeseries.csv
+09/12/2025  11:21 PM               145 Benchmark_Values.csv
+09/07/2025  09:10 PM               850 contracts_validate_debug.json
+09/14/2025  05:39 PM                 0 filelistinoutputs09141739.txt
+09/10/2025  01:03 AM             3,509 filelistoutputs.txt
+09/04/2025  08:34 PM             3,170 file_details_outputundermain.txt
+09/12/2025  11:21 PM               607 FX_Curve.csv
+09/12/2025  11:21 PM               237 Investor_Selected.csv
+09/12/2025  11:21 PM             7,722 Lender_Monthly.csv
+09/12/2025  11:21 PM               693 Lender_Yearly.csv
+09/05/2025  07:06 PM             3,658 m0_calendar.parquet
+08/27/2025  08:59 PM    <DIR>          m0_inputs
+09/05/2025  07:06 PM             2,433 m0_opening_bs.parquet
+09/05/2025  07:06 PM               204 m0_smoke_report.md
+09/05/2025  07:06 PM             2,211 m1_capex_schedule.parquet
+09/05/2025  07:06 PM             2,179 m1_depreciation_schedule.parquet
+09/05/2025  07:06 PM             2,877 m1_opex_schedule.parquet
+09/13/2025  07:23 PM             3,311 m1_revenue_schedule.parquet
+09/13/2025  07:23 PM                82 m1_smoke_report.md
+09/14/2025  01:01 AM               463 m2_debug_dump.json
+09/05/2025  07:06 PM             8,893 m2_pl_schedule.parquet
+09/14/2025  01:01 AM             2,777 m2_profit_and_loss_stub.parquet
+09/14/2025  01:01 AM               376 m2_smoke_report.md
+09/14/2025  01:01 AM             6,294 m2_working_capital_schedule.parquet
+09/07/2025  09:10 PM             4,061 m3_finance_index.parquet
+09/07/2025  09:10 PM             5,018 m3_insurance_schedule.parquet
+09/07/2025  09:10 PM             5,564 m3_revolver_schedule.parquet
+09/07/2025  09:10 PM               196 m3_smoke_report.md
+09/06/2025  11:20 PM             1,008 m4_enrich_debug.json
+09/14/2025  03:28 PM                71 m4_smoke_report.md
+09/14/2025  03:28 PM             6,178 m4_tax_schedule.parquet
+09/14/2025  03:28 PM             4,712 m4_tax_summary.parquet
+09/14/2025  03:28 PM             3,779 m5_cash_flow_statement_final.parquet
+09/09/2025  11:53 PM             1,004 m5_cf_roles_debug.json
+09/09/2025  11:53 PM               183 m5_cf_roles_report.md
+09/14/2025  03:28 PM             2,047 m5_debug_dump.json
+09/14/2025  03:28 PM               989 m5_smoke_report.md
+09/14/2025  03:28 PM            12,478 m6_balance_sheet.parquet
+09/14/2025  03:28 PM             1,066 m6_debug_dump.json
+09/14/2025  03:28 PM               505 m6_smoke_report.md
+09/14/2025  03:28 PM             7,535 m7_5b_balance_sheet.parquet
+09/12/2025  11:21 PM            16,969 M7_5B_BS.csv
+09/14/2025  03:28 PM             5,970 m7_5b_cash_flow.parquet
+09/12/2025  11:21 PM             8,322 M7_5B_CF.csv
+09/14/2025  03:28 PM               942 m7_5b_debug.json
+09/12/2025  11:21 PM            17,051 M7_5B_PL.csv
+09/14/2025  03:28 PM             4,728 m7_5b_profit_and_loss.parquet
+09/14/2025  03:28 PM               184 m7_5b_smoke_report.md
+09/07/2025  11:13 PM               861 m7_5_debug.json
+09/07/2025  11:13 PM                97 m7_5_junior_financing.csv
+09/07/2025  11:13 PM             3,526 m7_5_junior_financing.parquet
+09/07/2025  11:13 PM               365 m7_5_smoke_report.md
+09/07/2025  09:41 PM               713 m7_r1_debug.json
+09/07/2025  09:41 PM               991 m7_r1_scores.csv
+09/07/2025  09:41 PM            11,357 m7_r1_scores.parquet
+09/07/2025  09:41 PM             1,784 m7_r1_smoke_report.md
+09/10/2025  01:22 AM                87 m7_selected_offer.json
+09/10/2025  02:59 AM               337 m8a_debug.json
+09/10/2025  02:59 AM               298 m8a_verification_report.md
+09/11/2025  08:31 PM               431 m8b1_debug.json
+09/11/2025  08:31 PM               113 m8b1_smoke.md
+09/11/2025  05:02 PM               832 m8b2_debug.json
+09/11/2025  05:02 PM            16,088 m8b2_promoter_scorecard_monthly.parquet
+09/11/2025  05:02 PM            11,484 m8b2_promoter_scorecard_yearly.parquet
+09/11/2025  05:02 PM               323 m8b2_smoke.md
+09/11/2025  10:16 PM               679 m8b3_debug.json
+09/11/2025  10:16 PM               531 m8b3_smoke.md
+09/14/2025  01:55 PM               929 m8b4_debug.json
+09/14/2025  01:55 PM             9,969 m8b4_lender_metrics_monthly.parquet
+09/14/2025  01:55 PM             7,235 m8b4_lender_metrics_yearly.parquet
+09/14/2025  01:55 PM               174 m8b4_smoke.md
+09/14/2025  01:55 PM                19 m8b5_debug.json
+09/14/2025  01:55 PM                40 m8b5_smoke.md
+09/14/2025  01:55 PM               538 m8b6_debug.json
+09/14/2025  01:55 PM               177 m8b6_smoke.md
+09/11/2025  08:31 PM             3,765 m8b_base_timeseries.parquet
+09/14/2025  01:55 PM             3,069 m8b_benchmarks.catalog.json
+09/14/2025  01:55 PM             3,522 m8b_benchmarks.values.parquet
+09/11/2025  08:31 PM             2,482 m8b_fx_curve.parquet
+09/11/2025  09:10 PM               244 m8b_gate_valuations.json
+09/14/2025  01:55 PM             3,438 m8b_ifrs_mapping.json
+09/14/2025  01:55 PM             1,007 m8b_ifrs_notes.json
+09/14/2025  01:55 PM             6,544 m8b_ifrs_statements.parquet
+09/11/2025  10:16 PM             6,919 m8b_investor_metrics_selected.parquet
+09/11/2025  10:52 PM                39 m8b_terms.json
+09/12/2025  11:21 PM               743 m9_0_debug.json
+09/12/2025  11:21 PM            44,988 m9_0_pack.xlsx
+09/12/2025  11:21 PM               289 m9_0_smoke.md
+09/12/2025  11:21 PM             1,175 m9_manifest.json
+09/12/2025  11:07 PM                 0 m9_pack.xlsx
+09/12/2025  11:07 PM    <DIR>          m9_pack_csv
+09/04/2025  05:40 PM             1,219 orchestrate_log.txt
+09/05/2025  05:18 PM             2,035 orchestrator_debug_dump.json
+09/04/2025  08:24 PM             5,617 orchestrator_log.txt
+09/12/2025  11:21 PM            15,332 Promoter_Monthly.csv
+09/12/2025  11:21 PM             1,490 Promoter_Yearly.csv
+09/05/2025  05:18 PM               852 restore_log.md
+09/13/2025  01:35 PM    <DIR>          _contracts
+              95 File(s)        338,876 bytes
+
+ Directory of C:\TerraNova\outputs\assets
+
+09/12/2025  11:55 PM    <DIR>          .
+09/14/2025  05:39 PM    <DIR>          ..
+09/12/2025  11:54 PM           824,404 Logo.jpg
+               1 File(s)        824,404 bytes
+
+ Directory of C:\TerraNova\outputs\m0_inputs
+
+08/27/2025  08:59 PM    <DIR>          .
+09/14/2025  05:39 PM    <DIR>          ..
+09/05/2025  07:06 PM             4,162 CAPEX_Schedule.parquet
+09/14/2025  05:37 PM             5,149 Case_Library.parquet
+09/14/2025  05:37 PM             2,051 Case_Selector.parquet
+09/05/2025  07:06 PM            11,319 Finance_Stack.parquet
+09/05/2025  07:06 PM             5,580 Financing_Stack_Scenarios.parquet
+09/14/2025  05:25 PM             2,911 FX_Path.parquet
+09/05/2025  07:06 PM             3,952 IFRS_Balance_Sheet.parquet
+09/05/2025  07:06 PM             3,912 IFRS_Cash_Flow.parquet
+09/05/2025  07:06 PM             3,904 IFRS_P&L.parquet
+09/05/2025  07:06 PM             6,322 Investor_500k_Offer_Grid.parquet
+09/05/2025  07:06 PM             5,239 Notes_for_Use.parquet
+09/05/2025  07:06 PM             3,803 OPEX_Detail.parquet
+09/05/2025  07:06 PM             1,846 Parameters.parquet
+09/05/2025  07:06 PM             1,608 PFinance_Case_Selector.parquet
+09/05/2025  07:06 PM             5,622 Revenue_Assumptions.parquet
+09/05/2025  07:06 PM             9,365 Rev_Ramp_Seasonality.parquet
+09/05/2025  07:06 PM             2,291 Units.parquet
+09/05/2025  07:06 PM             1,842 Working_Capital_Tax.parquet
+              18 File(s)         80,878 bytes
+
+ Directory of C:\TerraNova\outputs\m9_pack_csv
+
+09/12/2025  11:07 PM    <DIR>          .
+09/14/2025  05:39 PM    <DIR>          ..
+09/12/2025  11:07 PM               878 Base_Timeseries.csv
+09/12/2025  11:07 PM               145 Benchmark_Values.csv
+09/12/2025  11:07 PM               607 FX_Curve.csv
+09/12/2025  11:07 PM               237 Investor_Selected.csv
+09/12/2025  11:07 PM             7,722 Lender_Monthly.csv
+09/12/2025  11:07 PM               693 Lender_Yearly.csv
+09/12/2025  11:07 PM            16,969 M7_5B_BS.csv
+09/12/2025  11:07 PM             8,322 M7_5B_CF.csv
+09/12/2025  11:07 PM            17,051 M7_5B_PL.csv
+09/12/2025  11:07 PM            15,332 Promoter_Monthly.csv
+09/12/2025  11:07 PM             1,490 Promoter_Yearly.csv
+              11 File(s)         69,446 bytes
+
+ Directory of C:\TerraNova\outputs\_contracts
+
+09/13/2025  01:35 PM    <DIR>          .
+09/14/2025  05:39 PM    <DIR>          ..
+               0 File(s)              0 bytes
+
+     Total Files Listed:
+             125 File(s)      1,313,604 bytes
+              14 Dir(s)  321,654,792,192 bytes free

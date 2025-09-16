@@ -1,0 +1,180 @@
+{
+  "meta": {
+    "currency": "NAD",
+    "sources": {
+      "m2_pl": {
+        "pl_path": "C:\\TerraNova\\outputs\\m2_pl_schedule.parquet",
+        "npat_col": "NPAT_NAD_000",
+        "da_col": "Depreciation_NAD_000"
+      },
+      "m2_wc": {
+        "wc_path": "C:\\TerraNova\\outputs\\m2_working_capital_schedule.parquet",
+        "nwc_cf_col": "Cash_Flow_from_NWC_Change_NAD_000"
+      },
+      "m1_capex": {
+        "cfi_col": "Monthly_CAPEX_NAD_000",
+        "sign_flipped": false,
+        "path": "C:\\TerraNova\\outputs\\m1_capex_schedule.parquet"
+      },
+      "m3_revolver": {
+        "rev_path": "C:\\TerraNova\\outputs\\m3_revolver_schedule.parquet",
+        "source": "C:\\TerraNova\\outputs\\m3_revolver_schedule.parquet",
+        "month_col": "Month_Index",
+        "draw_col": "Revolver_Draw_NAD_000",
+        "repay_col": "Revolver_Repayment_NAD_000",
+        "fee_col": null,
+        "interest_col": "Revolver_Interest_Expense_NAD_000",
+        "fees_included_in_cff": false
+      },
+      "m4_tax": {
+        "tax_path": "C:\\TerraNova\\outputs\\m4_tax_schedule.parquet",
+        "tax_paid_col": "Tax_Paid_NAD_000"
+      },
+      "m0_opening_cash": {
+        "source": "M0:Line_Item match",
+        "path": "C:\\TerraNova\\outputs\\m0_opening_bs.parquet",
+        "policy_default_zero": false
+      }
+    },
+    "policy": {
+      "cfo_formula": "NPAT + DA + NWC_CF - Tax_Paid - Interest_Paid (Stabilized Formula)",
+      "interest_source": "M3_Strict",
+      "tax_paid_source": "M4",
+      "opening_cash_policy_default_zero_if_absent": true
+    },
+    "column_mapping_to_validator": {
+      "NPAT_NAD_000": "Net_Profit_After_Tax_NAD_000",
+      "DA_NAD_000": "Depreciation_NAD_000",
+      "NWC_CF_NAD_000": "WC_Cash_Flow_NAD_000",
+      "CFO_NAD_000": "Cash_Flow_from_Operations_NAD_000"
+    }
+  },
+  "preview": {
+    "Month_Index": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "Net_Profit_After_Tax_NAD_000": [
+      -1029.0833333333335,
+      -1029.0833333333335,
+      -1029.0833333333335,
+      -1029.0833333333335,
+      -1039.0833333333335,
+      -1051.8611111111113,
+      -1098.7361111111113,
+      -1111.9027777777778,
+      -1111.9027777777778,
+      -1111.9027777777778,
+      -1111.9027777777778,
+      -1111.9027777777778
+    ],
+    "Depreciation_NAD_000": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      10.0,
+      22.77777777777778,
+      69.65277777777777,
+      82.81944444444444,
+      82.81944444444444,
+      82.81944444444444,
+      82.81944444444444,
+      82.81944444444444
+    ],
+    "WC_Cash_Flow_NAD_000": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -2598.969392127989,
+      704.2849770378884,
+      550.3443814580935,
+      235.69615384615395,
+      -101.21127109020131,
+      -205.7482276119399
+    ],
+    "Tax_Paid_NAD_000": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Interest_Paid_NAD_000": [
+      0.0,
+      33.72,
+      114.55720000000001,
+      115.70277200000001,
+      134.75979972000002,
+      155.87961993942224,
+      201.74188836103866,
+      244.72080672148448,
+      252.456970573876,
+      248.64990202058937,
+      247.95124505788928,
+      250.61467577492576
+    ],
+    "Cash_Flow_from_Operations_NAD_000": [
+      -1029.0833333333335,
+      -1062.8033333333335,
+      -1143.6405333333335,
+      -1144.7861053333336,
+      -1163.8431330533335,
+      -1184.9629532727558,
+      -3829.794613822361,
+      -569.5191630169295,
+      -731.195922449116,
+      -1042.037081507769,
+      -1378.245849481424,
+      -1485.446236720199
+    ],
+    "CFI_NAD_000": [
+      3372.0,
+      8050.0,
+      0.0,
+      1800.0,
+      2000.0,
+      4500.0,
+      1580.0,
+      1316.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "CFF_NAD_000": [
+      3372.0,
+      8083.72,
+      114.55720000000001,
+      1905.702772,
+      2111.982021942222,
+      4586.2268421616445,
+      4297.891836044584,
+      773.6163852391516,
+      -380.70685532866196,
+      -69.86569627000904,
+      266.34307170364616,
+      373.54345894242124
+    ]
+  }
+}

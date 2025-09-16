@@ -1,0 +1,27 @@
+{
+  "option": "A_SAFE",
+  "instrument": "SAFE",
+  "offer_source_keys": [
+    "Classification",
+    "Instrument",
+    "Option"
+  ],
+  "fx_used": 18.5,
+  "fx_source": "outputs\\m8b_fx_curve.parquet",
+  "gate_vals_nad_000": {
+    "M36": 40000.0
+  },
+  "ticket_nad_000": 9250.0,
+  "ticket_usd": 500000.0,
+  "ticket_month_index": 1,
+  "ticket_source": "m7_r1_scores.parquet:Ticket_USD",
+  "cap_nad_000": null,
+  "cap_source": "cap:not_found",
+  "discount_fraction": null,
+  "ownership_fraction": 0.23125,
+  "ownership_basis": "gate36_ev",
+  "warnings": [],
+  "notes": [
+    "[M8.B3] Gate Month‑36 defaulted to NAD 40,000,000 ('000 units) per policy."
+  ]
+}

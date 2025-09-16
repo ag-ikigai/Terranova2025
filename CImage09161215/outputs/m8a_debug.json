@@ -1,0 +1,12 @@
+{
+  "bs_tie_max_abs_diff": 0.0,
+  "cash_link_cf_col": "Closing_Cash_NAD_000",
+  "cash_link_bs_col": "Cash_and_Cash_Equivalents_NAD_000",
+  "cfo_m75b_col": "CFO_NAD_000",
+  "cfo_m5_col": "CFO_NAD_000",
+  "cfo_diff_max_abs": 0.0,
+  "crop_area_total_ha": 65.0,
+  "fx_debug_present": true,
+  "diagnostic": true,
+  "strict": true
+}

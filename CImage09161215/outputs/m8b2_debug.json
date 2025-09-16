@@ -1,0 +1,26 @@
+{
+  "fx_col": "NAD_per_USD",
+  "resolved_columns": {
+    "revenue": "Total_Revenue_NAD_000",
+    "ebitda": "EBITDA_NAD_000",
+    "ebit": "EBIT_NAD_000",
+    "npat": "NPAT_NAD_000",
+    "opex": "Total_OPEX_NAD_000",
+    "cash": "Cash_and_Cash_Equivalents_NAD_000",
+    "CA": "Current_Assets_NAD_000",
+    "CL": "Current_Liabilities_NAD_000",
+    "Inventory": "Inventory_Balance_NAD_000",
+    "CFO": "CFO_NAD_000",
+    "CFI": "CFI_NAD_000",
+    "CFF": "CFF_NAD_000",
+    "Closing_Cash": "Closing_Cash_NAD_000"
+  },
+  "optional_metrics": {
+    "Quick_Ratio_included": true
+  },
+  "notes": [
+    "Yearly ratios are arithmetic means of monthly ratios.",
+    "Free_Cash_Flow \u2248 CFO + CFI (negative CFI represents CAPEX outflows).",
+    "Cash_Runway_Months uses operational outflow proxy = max(0, -CFO)."
+  ]
+}

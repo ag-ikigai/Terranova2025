@@ -1,0 +1,151 @@
+{
+  "pl": {
+    "lines": [
+      {
+        "ifrs_line": "Revenue",
+        "from": "Total_Revenue_NAD_000",
+        "candidates": [
+          "Total_Revenue_NAD_000",
+          "Revenue_NAD_000"
+        ],
+        "missing": false
+      },
+      {
+        "ifrs_line": "Operating expenses",
+        "from": null,
+        "candidates": [
+          "Total_OPEX_NAD_000"
+        ],
+        "missing": true
+      },
+      {
+        "ifrs_line": "Depreciation and amortisation",
+        "from": "Depreciation_NAD_000",
+        "candidates": [
+          "Depreciation_NAD_000"
+        ],
+        "missing": false
+      },
+      {
+        "ifrs_line": "Operating profit (EBIT)",
+        "from": null,
+        "candidates": [
+          "EBIT_NAD_000"
+        ],
+        "missing": true
+      },
+      {
+        "ifrs_line": "Finance costs",
+        "from": null,
+        "candidates": [
+          "Interest_Expense_NAD_000"
+        ],
+        "missing": true
+      },
+      {
+        "ifrs_line": "Income tax expense",
+        "from": null,
+        "candidates": [
+          "Tax_Expense_NAD_000"
+        ],
+        "missing": true
+      },
+      {
+        "ifrs_line": "Profit for the period",
+        "from": "NPAT_NAD_000",
+        "candidates": [
+          "NPAT_NAD_000"
+        ],
+        "missing": false
+      },
+      {
+        "ifrs_line": "EBITDA (non\u2011GAAP subtotal)",
+        "from": null,
+        "candidates": [
+          "EBITDA_NAD_000"
+        ],
+        "missing": true
+      }
+    ]
+  },
+  "bs": {
+    "lines": [
+      {
+        "ifrs_line": "Cash and cash equivalents",
+        "from": "Cash_and_Cash_Equivalents_NAD_000",
+        "candidates": [
+          "Cash_and_Cash_Equivalents_NAD_000"
+        ],
+        "missing": false
+      },
+      {
+        "ifrs_line": "Current assets",
+        "from": null,
+        "candidates": [
+          "Current_Assets_NAD_000"
+        ],
+        "missing": true
+      },
+      {
+        "ifrs_line": "Current liabilities",
+        "from": null,
+        "candidates": [
+          "Current_Liabilities_NAD_000"
+        ],
+        "missing": true
+      },
+      {
+        "ifrs_line": "Total assets",
+        "from": null,
+        "candidates": [
+          "Total_Assets_NAD_000"
+        ],
+        "missing": true
+      },
+      {
+        "ifrs_line": "Total liabilities and equity",
+        "from": null,
+        "candidates": [
+          "Liabilities_and_Equity_Total_NAD_000"
+        ],
+        "missing": true
+      }
+    ]
+  },
+  "cf": {
+    "lines": [
+      {
+        "ifrs_line": "Cash flows from operating activities",
+        "from": "CFO_NAD_000",
+        "candidates": [
+          "CFO_NAD_000"
+        ],
+        "missing": false
+      },
+      {
+        "ifrs_line": "Cash flows from investing activities",
+        "from": "CFI_NAD_000",
+        "candidates": [
+          "CFI_NAD_000"
+        ],
+        "missing": false
+      },
+      {
+        "ifrs_line": "Cash flows from financing activities",
+        "from": "CFF_NAD_000",
+        "candidates": [
+          "CFF_NAD_000"
+        ],
+        "missing": false
+      },
+      {
+        "ifrs_line": "Closing cash",
+        "from": "Closing_Cash_NAD_000",
+        "candidates": [
+          "Closing_Cash_NAD_000"
+        ],
+        "missing": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "weights": {
+    "Valuation_Cap_NAD": 1.0,
+    "Discount_pct": 1.0,
+    "RevShare_preRefi_pct": 1.0,
+    "Min_IRR_Floor_pct": 1.0,
+    "Exit_Refi_Multiple": 0.5
+  },
+  "n_offers": 6,
+  "selected_option": "A_SAFE",
+  "selected_instrument": "SAFE",
+  "selected_score": 100.0,
+  "columns": [
+    "Option",
+    "Instrument",
+    "Ticket_USD",
+    "Valuation_Cap_NAD",
+    "Discount_pct",
+    "RevShare_preRefi_pct",
+    "Min_IRR_Floor_pct",
+    "Conversion_Terms",
+    "Exit_Refi_Multiple",
+    "Score_Cap",
+    "Score_Discount",
+    "Score_RevShare",
+    "Score_IRRFloor",
+    "Score_ExitMult",
+    "Total_Score_0_100",
+    "Selected",
+    "Rank"
+  ],
+  "currency_context": "NAD"
+}
