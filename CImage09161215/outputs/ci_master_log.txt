@@ -1,0 +1,143 @@
+== Pin src to site-packages ==
+PYTHONPATH pinned at C:\TerraNova\.venv\Lib\site-packages\terranova_src.pth
+== M0 strict ==
+[M0] Wrote: {
+  "m0_inputs/Case_Selector.parquet": 1,
+  "m0_inputs/Case_Library.parquet": 5,
+  "m0_inputs/Parameters.parquet": 10,
+  "m0_inputs/Units.parquet": 9,
+  "m0_inputs/Revenue_Assumptions.parquet": 5,
+  "m0_inputs/Rev_Ramp_Seasonality.parquet": 5,
+  "m0_inputs/OPEX_Detail.parquet": 2,
+  "m0_inputs/CAPEX_Schedule.parquet": 12,
+  "m0_inputs/FX_Path.parquet": 60,
+  "m0_inputs/Working_Capital_Tax.parquet": 8,
+  "m0_inputs/Financing_Stack_Scenarios.parquet": 5,
+  "m0_inputs/PFinance_Case_Selector.parquet": 1,
+  "m0_inputs/Finance_Stack.parquet": 8,
+  "m0_inputs/Investor_500k_Offer_Grid.parquet": 6,
+  "m0_inputs/IFRS_P&L.parquet": 12,
+  "m0_inputs/IFRS_Balance_Sheet.parquet": 15,
+  "m0_inputs/IFRS_Cash_Flow.parquet": 13,
+  "m0_inputs/Notes_for_Use.parquet": 63,
+  "m0_calendar.parquet": 60,
+  "m0_opening_bs.parquet": 2
+}
+[FX     ] OK
+[Calendar] OK
+[Opening ] OK
+M0 STRICT: PASS (outputs equal to deterministic transforms of the Input Pack)
+CI M0 STRICT: PASS
+== M1 strict ==
+M1 STRICT: PASS
+CI M1 STRICT: PASS
+== M2 strict ==
+[M2 STRICT] Start
+[M2] Validation report: 
+{   "wc_rows": 60,   "wc_flavor": "stocks",   "wc_cols_preview": [     "AP_Balance_NAD_000",     "AR_Balance_NAD_000",     "Cash_Flow_from_NWC_Change_NAD_000",     "Inventory_Balance_NAD_000",     "Month_Index",     "NWC_Balance_NAD_000"   ],   "pl_used": "C:\\TerraNova\\outputs\\m2_profit_and_loss_stub.parquet",   "pl_cols_preview": [     "Month_Index",     "NPAT_NAD_000",     "Depreciation_NAD_000"   ] }
+M2 STRICT: PASS
+== M3 strict ==
+[M3 STRICT] Start
+[M3][OK] Emitted: {"m3_revolver_schedule.parquet": 60, "m3_finance_index.parquet": 3, "m3_insurance_schedule.parquet": 60}
+[M3][OK] Validation passed.
+CI M3 STRICT: PASS
+== M4 strict ==
+[M4 STRICT] Start
+[M4][OK] Emitted m4_tax_schedule.parquet, m4_tax_summary.parquet
+[M4][OK] Validation passed.
+CI M4 STRICT: PASS
+== M4 enrich payable ==
+{
+  "status": "ok",
+  "schedule": "C:\\TerraNova\\outputs\\m4_tax_schedule.parquet",
+  "used_columns": {
+    "Month_Index": "Month_Index",
+    "Tax_Expense": "Tax_Expense_NAD_000",
+    "Tax_Paid": "Tax_Paid_NAD_000"
+  },
+  "created_paid": false,
+  "payable_column": "Tax_Payable_NAD_000",
+  "summary_updates": {
+    "Tax_Paid_Total": 0.0,
+    "Tax_Payable_EOP": 0.0
+  }
+}
+== M5 runner ==
+== M6 runner ==
+== M7.R1 runner ==
+== M7 freeze selection ==
+[OK] Frozen selection -> C:\TerraNova\outputs\m7_selected_offer.json
+{
+  "Option": "A_SAFE",
+  "Instrument": "SAFE",
+  "Rank": 1,
+  "Total_Score_0_100": 100.0,
+  "Ticket_USD": 500000.0,
+  "Valuation_Cap_NAD": 30000000.0,
+  "Discount_pct": 20.0,
+  "RevShare_preRefi_pct": 0.0,
+  "Min_IRR_Floor_pct": 0.0,
+  "Exit_Refi_Multiple": 1.0
+}
+== M7_5A wiring ==
+== M7_5B rebuild ==
+== Contracts validator (M2-M6 strict) ==
+
+== M2 ==
+[OK] M2/PL: m2_pl_schedule.parquet
+[OK] M2/WC: m2_working_capital_schedule.parquet
+
+== M3 ==
+[OK] M3: m3_revolver_schedule.parquet, m3_finance_index.parquet
+
+== M4 ==
+[OK] M4: payable present -> Tax_Payable_NAD_000
+
+== M5 ==
+[OK] M5: CFO -> Cash_Flow_from_Operations_NAD_000
+
+== M6 ==
+[OK] M6: totals tie -> Assets_Total_NAD_000 = Liabilities_And_Equity_Total_NAD_000
+
+Wrote debug JSON: C:\TerraNova\outputs\contracts_validate_debug.json
+All contracts passed.
+== Validator: M4-enrich to M7_5B ==
+[OK] M4 tax payable roll-forward OK
+[OK] M5 CFO identity OK
+[INFO] Skipped M3 interest cross-check (no usable interest column present).
+{
+  "outdir": "C:\\TerraNova\\outputs",
+  "checks": [],
+  "m4_rows": 60,
+  "m4_rollforward_ok": true,
+  "m5_rows": 60,
+  "m5_cfo_identity_ok": true,
+  "m3_interest_check": "skipped (no schedule with interest found)"
+}
+[OK] Validator (M4-enrich → M5 → M7.5B context) PASS
+== M8.A (run + validate) ==
+[M8.A] Using runner: terra_nova.modules.m8A_verifier.runner:run_m8A
+[M8.A][INFO] Starting M8.A super‑verification in: C:\TerraNova\outputs
+[M8.A][OK]  Core M7.5B artifacts present.
+[M8.A][OK]  BS totals tie (max abs diff 0.000 ≤ 1.0).
+[M8.A][OK]  Cash link OK: CF Closing_Cash_NAD_000 equals BS Cash_and_Cash_Equivalents_NAD_000 (max diff 0.000).
+[M8.A][WARN] Negative closing cash detected (min -18370.05). Junior must be subordinated to senior. See waterfall note.
+[M8.A][OK]  CFO comparison: |M5 − M7.5B| max diff = 0.000000
+[M8.A][OK]  Total crop area = 65 ha (as expected).
+[M8.A][OK]  FX debug metadata found in M7.5B debug file.
+[M8.A][OK]  Report → m8a_verification_report.md
+[M8.A][OK]  Debug  → m8a_debug.json
+[M8.A] Overall: OK
+== M8.B1 Base Timeseries ==
+[M8.B1][INFO] Starting M8.B1 base timeseries in: C:\TerraNova\outputs
+[M8.B1][OK]  Calendar helpers (Calendar_Year, Calendar_Quarter) synthesized from Month_Index.
+[M8.B1][OK]  Emitted: m8b_base_timeseries.parquet
+[M8.B1][OK]  Debug → m8b1_debug.json
+[M8.B1][OK]  Smoke → m8b1_smoke.md
+== M8.B2 Promoter Scorecard ==
+Traceback (most recent call last):
+  File "C:\TerraNova\tools\_ci_stub_m8bn.py", line 32, in <module>
+    fn(*args, **kw)
+  File "C:\TerraNova\src\terra_nova\modules\m8B_2_promoter_scorecard\runner.py", line 140, in run_m8B2
+    raise RuntimeError(msg)
+RuntimeError: [M8.B2][FAIL] Missing required columns (M7.5B IFRS pack should provide these): P&L:EBIT, P&L:NPAT, BS:CA, BS:CL

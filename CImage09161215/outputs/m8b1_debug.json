@@ -1,10 +1,10 @@
 {
   "warns": [],
   "fx_candidates": [
-    "outputs\\m8b_fx_curve.parquet",
-    "outputs\\m0_inputs\\FX_Path.parquet"
+    "C:\\TerraNova\\outputs\\m8b_fx_curve.parquet",
+    "C:\\TerraNova\\outputs\\m0_inputs\\FX_Path.parquet"
   ],
-  "fx_used": "outputs\\m8b_fx_curve.parquet",
+  "fx_used": "C:\\TerraNova\\outputs\\m8b_fx_curve.parquet",
   "fx_head": {
     "Month_Index": [
       1,
@@ -18,7 +18,7 @@
     ]
   },
   "fx_written": [
-    "outputs\\m8b_fx_curve.parquet",
-    "outputs\\m0_inputs\\FX_Path.parquet"
+    "C:\\TerraNova\\outputs\\m8b_fx_curve.parquet",
+    "C:\\TerraNova\\outputs\\m0_inputs\\FX_Path.parquet"
   ]
 }

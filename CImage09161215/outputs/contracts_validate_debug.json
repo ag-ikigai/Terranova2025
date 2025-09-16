@@ -1,29 +1,20 @@
 {
   "m2": {
-    "pl_file": "m2_pl_schedule.parquet",
-    "wc_file": "m2_working_capital_schedule.parquet",
-    "pl_map": {
-      "DA": "Depreciation_NAD_000",
-      "NPAT": "NPAT_NAD_000",
-      "MONTH_INDEX": "Month_Index"
-    },
-    "wc_map": {
-      "NWC_CF": "Cash_Flow_from_NWC_Change_NAD_000",
-      "MONTH_INDEX": "Month_Index"
-    }
+    "pl": "m2_pl_schedule.parquet",
+    "wc": "m2_working_capital_schedule.parquet"
   },
   "m3": {
-    "pattern": "revolver+index"
+    "files": [
+      "m3_revolver_schedule.parquet",
+      "m3_finance_index.parquet"
+    ]
   },
   "m4": {
-    "file": "m4_tax_schedule.parquet",
-    "payable_col": "Tax_Payable_NAD_000",
-    "mode": "strict"
+    "file": "m4_tax_schedule.parquet"
   },
   "m5": {
     "file": "m5_cash_flow_statement_final.parquet",
-    "cfo_col": "Cash_Flow_from_Operations_NAD_000",
-    "month_index": "Month_Index"
+    "cfo": "Cash_Flow_from_Operations_NAD_000"
   },
   "m6": {
     "file": "m6_balance_sheet.parquet",

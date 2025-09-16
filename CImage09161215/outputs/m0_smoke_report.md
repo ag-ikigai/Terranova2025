@@ -1,4 +1,4 @@
-# M0 Smoke Report — 2025-09-16 00:36:46
+# M0 Smoke Report — 2025-09-16 18:03:06
 
 - m0_calendar.parquet: 60 rows
 - m0_inputs/CAPEX_Schedule.parquet: 12 rows
